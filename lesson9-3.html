@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.3 碱金属元素周期律与焰色试验 互动课堂学习单</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --accent-color: #2b6cb0;
+            --ans-color: #c53030;
+            --ans-bg: #fff5f5;
+            --bg-gray: #f7fafc;
+            --border-color: #e2e8f0;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Top Bar / Controls */
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #edf2f7;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .btn {
+            background-color: #3182ce;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn:hover { background-color: #2b6cb0; transform: translateY(-1px); }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #4a5568;
+            border: 1px solid #cbd5e0;
+        }
+
+        .btn-outline:hover { background-color: #e2e8f0; color: #2d3748; }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .school-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 2px;
+            margin: 0 0 5px 0;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4a5568;
+            margin: 0 0 12px 0;
+        }
+
+        .info-bar {
+            font-size: 14px;
+            color: #718096;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .objectives {
+            background-color: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .objectives p { margin: 0 0 6px 0; font-weight: bold; color: #2b6cb0; }
+        .objectives ul { margin: 0; padding-left: 20px; }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary-color);
+            background-color: #e2e8f0;
+            padding: 8px 14px;
+            border-radius: 6px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .question-block { margin-bottom: 15px; padding: 0 5px; }
+
+        /* Interactive Answer Styles */
+        .ans-inline { display: inline-block; position: relative; margin: 0 2px; }
+
+        .ans-trigger {
+            background-color: #edf2f7;
+            color: #4a5568;
+            border: 1px dashed #cbd5e0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.2s;
+        }
+
+        .ans-trigger:hover { background-color: #feebc8; border-color: #f6ad55; color: #c05621; }
+
+        .ans-content {
+            display: none;
+            color: var(--ans-color);
+            font-weight: 700;
+            background-color: var(--ans-bg);
+            border-bottom: 2px solid var(--ans-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .ans-content.show { display: inline-block; }
+        .ans-trigger.hidden { display: none; }
+
+        .block-ans-box { margin-top: 8px; }
+
+        .block-ans-content {
+            display: none;
+            background-color: var(--ans-bg);
+            border: 1px solid #feb2b2;
+            border-left: 4px solid var(--ans-color);
+            padding: 10px 14px;
+            border-radius: 4px;
+            color: var(--ans-color);
+            font-weight: bold;
+            margin-top: 6px;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .block-ans-content.show { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-3px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        table { width: 100%; border-collapse: collapse; margin: 12px 0; background-color: #fff; }
+        th, td { border: 1px solid var(--border-color); padding: 8px 12px; font-size: 14px; text-align: left; }
+        th { background-color: #f7fafc; color: #4a5568; font-weight: 700; }
+
+        /* Flame Test Box */
+        .sim-embed-container {
+            border: 2px solid #2c3e50;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #1a202c;
+            margin: 15px 0;
+            color: white;
+        }
+
+        .sim-header {
+            background-color: #2c3e50;
+            padding: 8px 15px;
+            font-weight: bold;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sim-main { display: flex; flex-wrap: wrap; padding: 15px; gap: 15px; }
+
+        .flame-btn {
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+            font-size: 12.5px;
+        }
+        .flame-btn:hover { opacity: 0.9; transform: scale(1.02); }
+
+        /* Mindmap Styles */
+        .mindmap-container {
+            margin-top: 25px;
+            background-color: #1e2227;
+            color: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .mindmap-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #343a40;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .mindmap-title { font-size: 16px; font-weight: 700; color: #61afef; }
+        .mindmap-content { display: none; overflow-x: auto; padding: 15px 5px; }
+        .mindmap-content.show { display: block; }
+
+        .h-tree { display: flex; align-items: center; }
+        .h-tree ul { display: none; flex-direction: column; justify-content: center; padding-left: 28px; position: relative; list-style: none; margin: 0; }
+        .h-tree ul.layer-open { display: flex; animation: fadeIn 0.3s ease-in-out; }
+        .h-tree li { position: relative; display: flex; align-items: center; margin: 8px 0; }
+        .h-tree li::before { content: ""; position: absolute; left: -28px; top: 50%; width: 28px; height: 1px; background-color: #4b5263; }
+        .h-tree li::after { content: ""; position: absolute; left: -28px; top: 0; width: 1px; height: 100%; background-color: #4b5263; }
+        .h-tree li:first-child::after { top: 50%; height: 50%; }
+        .h-tree li:last-child::after { height: 50%; }
+
+        .h-node {
+            display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 500;
+            border: 1px solid #3e4451; background: #2c313a; color: #abb2bf; white-space: nowrap; user-select: none; z-index: 2;
+        }
+        .h-node.has-children { cursor: pointer; }
+        .h-node.has-children:hover { border-color: #61afef; color: #fff; }
+        .h-node .toggle-btn { width: 16px; height: 16px; border-radius: 4px; background: #3e4451; color: #61afef; font-size: 12px; font-weight: bold; text-align: center; }
+        .h-node.root { background: #2b3a4e; color: #61afef; font-weight: 700; border-color: #61afef; }
+        .h-node.branch { background: #282c34; color: #e5c07b; font-weight: 600; }
+        .h-node.leaf { background: #21252b; color: #98c379; font-size: 12px; }
+
+        @media print {
+            .toolbar, .sim-embed-container, .mindmap-container { display: none !important; }
+            body { padding: 0; background: #fff; }
+            .container { box-shadow: none; padding: 0; max-width: 100%; }
+            .ans-trigger { display: none !important; }
+            .ans-content { display: inline-block !important; background: transparent; }
+            .block-ans-content { display: block !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Control Bar -->
+        <div class="toolbar">
+            <span style="font-weight: 600; color: #4a5568;">💡 课堂互动模式</span>
+            <div style="display: flex; gap: 10px;">
+                <a href="index.html" class="btn btn-outline" style="text-decoration: none;">🏠 返回目录</a>
+                <button class="btn" onclick="toggleAllAnswers(true)">🔓 展开全部答案</button>
+                <button class="btn btn-outline" onclick="toggleAllAnswers(false)">🔒 隐藏全部答案</button>
+                <button class="btn btn-outline" onclick="window.print()">🖨️ 打印页面</button>
+            </div>
+        </div>
+
+        <div class="header">
+            <div class="school-name">居銮中华中学</div>
+            <div class="title">高一理科班化学课堂学习单 —— 9.3 碱金属元素周期律与焰色试验（互动导学版）</div>
+            <div class="info-bar">
+                <span>班级：S1S1</span>
+                <span>姓名：________________</span>
+                <span>学号：__________</span>
+                <span>日期：2026年___月___日</span>
+            </div>
+        </div>
+
+        <div class="objectives">
+            <p>【核心素养与学习目标】</p>
+            <ul>
+                <li><strong>结构决定性质：</strong>掌握碱金属（Li, Na, K, Rb, Cs）从上到下金属性、还原性及与水/氧气反应剧烈度的递变规律。</li>
+                <li><strong>实验与鉴定：</strong>掌握焰色试验的标准操作步骤（洗、烧、蘸、烧、洗），记住 Na（黄）与 K（浅紫，透蓝钴玻璃）的特征焰色。</li>
+                <li><strong>微观跃迁：</strong>理解焰色反应的物理本质（电子吸收能量跃迁至激发态，回到基态时释放特定波长光谱）。</li>
+            </ul>
+        </div>
+
+        <!-- Task 1 -->
+        <div class="section-title">
+            <span>任务一：核心探究 —— 焰色试验（Flame Test）互动模拟</span>
+        </div>
+        <div class="question-block">
+            <div class="sim-embed-container">
+                <div class="sim-header">
+                    <span>🔥 经典焰色试验光谱与火焰动态模拟器</span>
+                    <span id="flame-status" style="font-size:12px; color:#f6e05e;">当前测试元素: 钠 (Na)</span>
+                </div>
+                <div class="sim-main">
+                    <div style="flex:1.2; text-align:center;">
+                        <canvas id="flameCanvas" width="340" height="210" style="background:#000; border-radius:6px; max-width:100%;"></canvas>
+                    </div>
+                    <div style="flex:1; display:flex; flex-direction:column; gap:8px;">
+                        <span style="font-size:13px; color:#a0aec0;">点击测试不同金属阳离子：</span>
+                        <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                            <button class="flame-btn" style="background:#e53e3e; color:white;" onclick="testFlame('Li', '#ff4d4d', '紫红色')">锂 (Li - 紫红)</button>
+                            <button class="flame-btn" style="background:#ecc94b; color:black;" onclick="testFlame('Na', '#f6e05e', '黄色')">钠 (Na - 黄)</button>
+                            <button class="flame-btn" style="background:#9f7aea; color:white;" onclick="testFlame('K', '#b794f4', '淡紫色')">钾 (K - 淡紫)</button>
+                            <button class="flame-btn" style="background:#38a169; color:white;" onclick="testFlame('Cu', '#48bb78', '绿色')">铜 (Cu - 绿)</button>
+                        </div>
+                        <div id="flame-obs" style="background:#2d3748; padding:10px; border-radius:4px; font-size:12.5px; line-height:1.5; margin-top:6px;">
+                            点击元素按钮观察火焰特征颜色及注意事项。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>1. <strong>焰色试验标准规范五步法：</strong></p>
+            <p style="margin-left:15px; font-size:14px;">
+                ① <strong>洗：</strong>用
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">稀盐酸</span>
+                </span> 洗净铂丝（或光洁无锈的铁丝）；<br>
+                ② <strong>烧：</strong>放在无色火焰上灼烧至
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">与原火焰颜色相同</span>
+                </span> 为止；<br>
+                ③ <strong>蘸：</strong>蘸取待测试样；<br>
+                ④ <strong>烧：</strong>放在外焰上灼烧，观察火焰颜色；<br>
+                ⑤ <strong>滤（特殊）：</strong>检验钾元素时，必须透过
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">蓝色钴玻璃</span>
+                </span> 观察，目的是
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">滤去钠盐微量杂质的黄光干扰</span>
+                </span>。
+            </p>
+        </div>
+
+        <!-- Task 2 -->
+        <div class="section-title">
+            <span>任务二：碱金属元素周期律与性质递变归纳</span>
+        </div>
+        <div class="question-block">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 30%;">碱金属递变维 (Li → Fr)</th>
+                        <th style="width: 70%;">规律与科学事实</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1. 原子半径</td>
+                        <td>逐渐
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">增大</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2. 金属性 & 还原性</td>
+                        <td>逐渐
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">增强</span>
+                            </span> (铯 Cs 是自然界金属性极强的稳定元素)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3. 单质密度</td>
+                        <td>总体呈增大趋势（注：
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">钾 K 的密度反常比 Na 小</span>
+                            </span>）
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4. 单质熔沸点</td>
+                        <td>逐渐
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">降低</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5. 与 H₂O 反应剧烈度</td>
+                        <td>Li(平缓) → Na(熔游) → K(燃烧爆鸣) → Rb/Cs(
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">剧烈爆炸</span>
+                            </span>)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Task 3 -->
+        <div class="section-title">
+            <span>任务三：随堂巩固测评与推断</span>
+        </div>
+        <div class="question-block">
+            <p>1. <strong>推断预测：</strong>放射性元素钫（Fr）位于第 7 周期 IA 族。下列关于 Fr 的预测陈述，<strong>错误</strong>的是：（
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">点击揭晓</button>
+                    <span class="ans-content">B</span>
+                </span> ）
+            </p>
+            <p style="margin-left:15px; font-size:14px; color:#4a5568;">
+                A. 具有碱金属中最大的原子半径<br>
+                B. 在空气中燃烧只生成 Fr₂O 简单氧化物（错误，应生成更复杂的超氧化物）<br>
+                C. 氢氧化物 FrOH 具有极强的碱性<br>
+                D. 与水反应极度剧烈并引发爆炸
+            </p>
+
+            <div class="block-ans-box" style="margin-top:15px;">
+                <span>2. <strong>焰色本质解析：</strong>简述为什么焰色反应属于物理变化而非化学变化？</span>
+                <button class="ans-trigger" onclick="toggleBlockAns(this)">展开解析</button>
+                <div class="block-ans-content">
+                    答：焰色反应是金属原子或离子的外层电子吸收能量后发生能级跃迁（激发态 → 基态）并以光子形式释放能量的过程。在此过程中没有新物质生成，因此属于<strong>物理变化</strong>。
+                </div>
+            </div>
+        </div>
+
+        <!-- NotebookLM 心智图 -->
+        <div class="mindmap-container">
+            <div class="mindmap-header">
+                <div class="mindmap-title">🧠 9.3 周期律与焰色试验 知识结构图</div>
+                <div>
+                    <button class="btn btn-outline" style="color:#61afef; border-color:#3e4451; padding:2px 8px; font-size:12px;" onclick="toggleMindmap()">展开/收起心智图</button>
+                </div>
+            </div>
+            <div class="mindmap-content" id="mindmap-content">
+                <div class="h-tree">
+                    <div class="h-node root has-children" onclick="toggleHNode(this)">周期律与焰色试验 <span class="toggle-btn">+</span></div>
+                    <ul>
+                        <li>
+                            <div class="h-node branch has-children" onclick="toggleHNode(this)">焰色试验 <span class="toggle-btn">+</span></div>
+                            <ul>
+                                <li><div class="h-node leaf">物理变化：电子跃迁发光</div></li>
+                                <li><div class="h-node leaf">Na：黄色；K：淡紫色 (透蓝钴玻璃)</div></li>
+                                <li><div class="h-node leaf">步骤：洗 → 烧 → 蘸 → 烧 → 洗</div></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="h-node branch has-children" onclick="toggleHNode(this)">IA 族递变规律 <span class="toggle-btn">+</span></div>
+                            <ul>
+                                <li><div class="h-node leaf">半径：Li < Na < K < Rb < Cs</div></li>
+                                <li><div class="h-node leaf">金属性/还原性：依次增强</div></li>
+                                <li><div class="h-node leaf">熔沸点：依次降低</div></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // --- 答案与通用展开控制 ---
+        function toggleAns(btnElement) {
+            const content = btnElement.nextElementSibling;
+            content.classList.toggle('show');
+            btnElement.classList.toggle('hidden');
+        }
+
+        function toggleBlockAns(btnElement) {
+            const content = btnElement.nextElementSibling;
+            const isShow = content.classList.toggle('show');
+            btnElement.textContent = isShow ? "收起解析" : "展开解析";
+        }
+
+        function toggleAllAnswers(showAll) {
+            document.querySelectorAll('.ans-content').forEach(c => c.classList.toggle('show', showAll));
+            document.querySelectorAll('.ans-inline .ans-trigger').forEach(t => t.classList.toggle('hidden', showAll));
+            document.querySelectorAll('.block-ans-content').forEach(c => c.classList.toggle('show', showAll));
+            document.querySelectorAll('.block-ans-box .ans-trigger').forEach(t => {
+                t.textContent = showAll ? "收起解析" : "展开解析";
+            });
+        }
+
+        // --- 心智图交互逻辑 ---
+        function toggleMindmap() {
+            document.getElementById('mindmap-content').classList.toggle('show');
+        }
+
+        function toggleHNode(nodeElement) {
+            const nextUl = nodeElement.nextElementSibling;
+            const toggleBtn = nodeElement.querySelector('.toggle-btn');
+            if (nextUl && nextUl.tagName === 'UL') {
+                const isOpen = nextUl.classList.toggle('layer-open');
+                if(toggleBtn) toggleBtn.textContent = isOpen ? '-' : '+';
+            }
+        }
+
+        // --- 焰色反应 Canvas 动态绘制逻辑 ---
+        const fc = document.getElementById('flameCanvas');
+        const fctx = fc.getContext('2d');
+        let flameAnimId = null;
+
+        function testFlame(elem, colorHex, colorName) {
+            if (flameAnimId) cancelAnimationFrame(flameAnimId);
+
+            document.getElementById('flame-status').innerText = `当前测试元素: ${elem} (${colorName})`;
+
+            let frame = 0;
+            function render() {
+                fctx.clearRect(0, 0, fc.width, fc.height);
+
+                // 1. 本生灯底座与灯管
+                fctx.fillStyle = '#718096';
+                fctx.fillRect(150, 160, 40, 30); // 灯座
+                fctx.fillStyle = '#a0aec0';
+                fctx.fillRect(162, 110, 16, 50); // 金属管
+
+                // 2. 铂丝棒
+                fctx.strokeStyle = '#e2e8f0'; fctx.lineWidth = 1.5;
+                fctx.beginPath();
+                fctx.moveTo(70, 95);
+                fctx.lineTo(168, 95);
+                fctx.stroke();
+
+                // 3. 动态火焰效果
+                let flicker = Math.sin(frame * 0.2) * 4;
+
+                // 外焰 (特征焰色)
+                fctx.fillStyle = colorHex;
+                fctx.beginPath();
+                fctx.moveTo(170, 30 + flicker);
+                fctx.quadraticCurveTo(130, 80, 158, 110);
+                fctx.lineTo(182, 110);
+                fctx.quadraticCurveTo(210, 80, 170, 30 + flicker);
+                fctx.fill();
+
+                // 内焰 (蓝色)
+                fctx.fillStyle = 'rgba(66, 153, 225, 0.85)';
+                fctx.beginPath();
+                fctx.moveTo(170, 75);
+                fctx.quadraticCurveTo(155, 95, 164, 110);
+                fctx.lineTo(176, 110);
+                fctx.quadraticCurveTo(185, 95, 170, 75);
+                fctx.fill();
+
+                frame++;
+                flameAnimId = requestAnimationFrame(render);
+            }
+            render();
+
+            // 观察说明更新
+            const obs = document.getElementById('flame-obs');
+            if (elem === 'K') {
+                obs.innerHTML = `<strong>${elem} 元素焰色：</strong>呈特征<strong>${colorName}</strong>。<br>⚠️ <strong>关键细节：</strong>由于钾盐中常混有微量钠盐，观察时必须透过<strong>蓝色钴玻璃</strong>（滤去 Na 的黄光干扰）。`;
+            } else {
+                obs.innerHTML = `<strong>${elem} 元素焰色：</strong>在无色火焰上灼烧呈鲜艳的<strong>${colorName}</strong>。<br>💡 <strong>现象应用：</strong>节日烟花的绚丽色彩正是利用了不同金属元素的焰色反应。`;
+            }
+        }
+
+        // 默认初始化呈现 钠 (Na) 的黄光
+        testFlame('Na', '#f6e05e', '黄色');
+    </script>
+</body>
+</html>
