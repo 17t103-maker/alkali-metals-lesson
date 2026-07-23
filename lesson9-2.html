@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.2 钠和钾 Important Compounds 互动课堂学习单</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --accent-color: #2b6cb0;
+            --ans-color: #c53030;
+            --ans-bg: #fff5f5;
+            --bg-gray: #f7fafc;
+            --border-color: #e2e8f0;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Top Bar / Controls */
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #edf2f7;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .btn {
+            background-color: #3182ce;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn:hover {
+            background-color: #2b6cb0;
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #4a5568;
+            border: 1px solid #cbd5e0;
+        }
+
+        .btn-outline:hover {
+            background-color: #e2e8f0;
+            color: #2d3748;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .school-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 2px;
+            margin: 0 0 5px 0;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4a5568;
+            margin: 0 0 12px 0;
+        }
+
+        .info-bar {
+            font-size: 14px;
+            color: #718096;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .objectives {
+            background-color: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .objectives p {
+            margin: 0 0 6px 0;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+
+        .objectives ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary-color);
+            background-color: #e2e8f0;
+            padding: 8px 14px;
+            border-radius: 6px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .question-block {
+            margin-bottom: 15px;
+            padding: 0 5px;
+        }
+
+        /* Interactive Answer Styles */
+        .ans-inline {
+            display: inline-block;
+            position: relative;
+            margin: 0 2px;
+        }
+
+        .ans-trigger {
+            background-color: #edf2f7;
+            color: #4a5568;
+            border: 1px dashed #cbd5e0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.2s;
+        }
+
+        .ans-trigger:hover {
+            background-color: #feebc8;
+            border-color: #f6ad55;
+            color: #c05621;
+        }
+
+        .ans-content {
+            display: none;
+            color: var(--ans-color);
+            font-weight: 700;
+            background-color: var(--ans-bg);
+            border-bottom: 2px solid var(--ans-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .ans-content.show {
+            display: inline-block;
+        }
+
+        .ans-trigger.hidden {
+            display: none;
+        }
+
+        .block-ans-box {
+            margin-top: 8px;
+        }
+
+        .block-ans-content {
+            display: none;
+            background-color: var(--ans-bg);
+            border: 1px solid #feb2b2;
+            border-left: 4px solid var(--ans-color);
+            padding: 10px 14px;
+            border-radius: 4px;
+            color: var(--ans-color);
+            font-weight: bold;
+            margin-top: 6px;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .block-ans-content.show {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-3px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .math {
+            font-family: "Times New Roman", Georgia, serif;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            background-color: #fff;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f7fafc;
+            color: #4a5568;
+            font-weight: 700;
+        }
+
+        /* PhET 模拟器嵌入样式 */
+        .sim-embed-container {
+            border: 2px solid #2c3e50;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #f8f9fa;
+            margin: 15px 0;
+        }
+
+        .sim-header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 8px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .sim-main {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            gap: 10px;
+            background: #eef2f5;
+        }
+
+        .sim-canvas-area {
+            flex: 2;
+            min-width: 340px;
+            background: #fff;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border: 1px solid #cbd5e0;
+        }
+
+        .sim-control-panel {
+            flex: 1;
+            min-width: 240px;
+            background: #fff;
+            border-radius: 6px;
+            padding: 12px;
+            border: 1px solid #cbd5e0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sim-btn {
+            padding: 8px 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            background: #edf2f7;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 13px;
+            transition: 0.2s;
+            text-align: left;
+        }
+
+        .sim-btn:hover { background: #e2e8f0; }
+        .sim-btn.primary { background: #3182ce; color: white; border: none; }
+        .sim-btn.primary:hover { background: #2b6cb0; }
+
+        .sim-obs-box {
+            background: #fff9db;
+            border-left: 3px solid #f1c40f;
+            padding: 10px;
+            font-size: 12.5px;
+            line-height: 1.5;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* Horizontal Mindmap */
+        .mindmap-container {
+            margin-top: 25px;
+            background-color: #1e2227;
+            color: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .mindmap-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #343a40;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .mindmap-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #61afef;
+        }
+
+        .mindmap-content {
+            display: none;
+            overflow-x: auto;
+            padding: 15px 5px;
+        }
+
+        .mindmap-content.show { display: block; }
+
+        .h-tree { display: flex; align-items: center; }
+        .h-tree ul {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 28px;
+            position: relative;
+            list-style: none;
+            margin: 0;
+        }
+        .h-tree ul.layer-open { display: flex; animation: fadeIn 0.3s ease-in-out; }
+        .h-tree li { position: relative; display: flex; align-items: center; margin: 8px 0; }
+        .h-tree li::before { content: ""; position: absolute; left: -28px; top: 50%; width: 28px; height: 1px; background-color: #4b5263; }
+        .h-tree li::after { content: ""; position: absolute; left: -28px; top: 0; width: 1px; height: 100%; background-color: #4b5263; }
+        .h-tree li:first-child::after { top: 50%; height: 50%; }
+        .h-tree li:last-child::after { height: 50%; }
+        .h-tree li:only-child::after { display: none; }
+
+        .h-node {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1px solid #3e4451;
+            background: #2c313a;
+            color: #abb2bf;
+            white-space: nowrap;
+            user-select: none;
+            z-index: 2;
+        }
+        .h-node.has-children { cursor: pointer; }
+        .h-node.has-children:hover { border-color: #61afef; color: #fff; }
+        .h-node .toggle-btn { width: 16px; height: 16px; border-radius: 4px; background: #3e4451; color: #61afef; font-size: 12px; font-weight: bold; text-align: center; }
+        .h-node.root { background: #2b3a4e; color: #61afef; font-weight: 700; border-color: #61afef; }
+        .h-node.branch { background: #282c34; color: #e5c07b; font-weight: 600; }
+        .h-node.leaf { background: #21252b; color: #98c379; font-size: 12px; }
+
+        @media print {
+            .toolbar, .sim-embed-container, .mindmap-container { display: none !important; }
+            body { padding: 0; background: #fff; }
+            .container { box-shadow: none; padding: 0; max-width: 100%; }
+            .ans-trigger { display: none !important; }
+            .ans-content { display: inline-block !important; background: transparent; }
+            .block-ans-content { display: block !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Control Bar -->
+        <div class="toolbar">
+            <span style="font-weight: 600; color: #4a5568;">💡 课堂互动模式</span>
+            <div style="display: flex; gap: 10px;">
+                <a href="index.html" class="btn btn-outline" style="text-decoration: none;">🏠 返回目录</a>
+                <button class="btn" onclick="toggleAllAnswers(true)">🔓 展开全部答案</button>
+                <button class="btn btn-outline" onclick="toggleAllAnswers(false)">🔒 隐藏全部答案</button>
+                <button class="btn btn-outline" onclick="window.print()">🖨️ 打印页面</button>
+            </div>
+        </div>
+
+        <div class="header">
+            <div class="school-name">居銮中华中学</div>
+            <div class="title">高一理科班化学课堂学习单 —— 9.2 钠和钾的重要化合物（互动导学版）</div>
+            <div class="info-bar">
+                <span>班级：S1S1</span>
+                <span>姓名：________________</span>
+                <span>学号：__________</span>
+                <span>日期：2026年___月___日</span>
+            </div>
+        </div>
+
+        <div class="objectives">
+            <p>【核心素养与学习目标】</p>
+            <ul>
+                <li><strong>对比与推理：</strong>对比氧化钠（Na₂O）与过氧化钠（Na₂O₂）的结构、性质差异及 Na₂O₂ 的强氧化性与供氧用途。</li>
+                <li><strong>探究与证据：</strong>通过标准加热实验与酸反应实验，掌握 Na₂CO₃ 与 NaHCO₃ 的鉴别、互相转化与热稳定性差异。</li>
+                <li><strong>生活与工业：</strong>理解氢氧化钠（NaOH）的潮解与变质检验，以及氯碱工业与海水晒盐的生产原理。</li>
+            </ul>
+        </div>
+
+        <!-- Task 1 -->
+        <div class="section-title">
+            <span>任务一：钠的氧化物对比 —— Na₂O 与 Na₂O₂</span>
+        </div>
+        <div class="question-block">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">对比项目</th>
+                        <th style="width: 37.5%;">氧化钠 (Na₂O)</th>
+                        <th style="width: 37.5%;">过氧化钠 (Na₂O₂)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1. 颜色与状态</td>
+                        <td>白色固体</td>
+                        <td>
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">淡黄色固体</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2. 氧元素化合价</td>
+                        <td>-2 价</td>
+                        <td>
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">-1 价</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3. 与 H₂O 反应方程式</td>
+                        <td>Na₂O + H₂O → 2NaOH</td>
+                        <td>
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">2Na₂O₂ + 2H₂O → 4NaOH + O₂↑</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4. 与 CO₂ 反应方程式</td>
+                        <td>Na₂O + CO₂ → Na₂CO₃</td>
+                        <td>
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">2Na₂O₂ + 2CO₂ → 2Na₂CO₃ + O₂</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5. 特殊用途</td>
+                        <td>制造含钠化合物原料</td>
+                        <td>呼吸面具与潜水艇中的
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">供氧剂</span>
+                            </span> 及漂白剂
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Task 2 -->
+        <div class="section-title">
+            <span>任务二：氢氧化钠（NaOH）的潮解与变质检验</span>
+        </div>
+        <div class="question-block">
+            <p>1. <strong>潮解与变质：</strong>氢氧化钠俗称烧碱、火碱、苛性钠，极易吸水而潮解，在空气中变质的化学方程式为：
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">2NaOH + CO₂ → Na₂CO₃ + H₂O</span>
+                </span>。
+            </p>
+            <p>2. <strong>变质检验方案设计：</strong></p>
+            <div class="block-ans-box">
+                <span>&bull; 方案一（加酸法）：</span>
+                <button class="ans-trigger" onclick="toggleBlockAns(this)">展开方案</button>
+                <div class="block-ans-content">取少量样品配成溶液，滴加足量稀盐酸。若观察到有气泡（CO₂）冒出，说明 NaOH 已经变质。</div>
+            </div>
+            <div class="block-ans-box" style="margin-top:8px;">
+                <span>&bull; 方案二（沉淀法 - 钙/钡盐）：</span>
+                <button class="ans-trigger" onclick="toggleBlockAns(this)">展开方案</button>
+                <div class="block-ans-content">取少量样品配成溶液，滴加 CaCl₂ 或 BaCl₂ 溶液。若产生白色沉淀（CaCO₃ 或 BaCO₃），说明已经变质。</div>
+            </div>
+        </div>
+
+        <!-- Task 3 -->
+        <div class="section-title">
+            <span>任务三：核心探究 —— Na₂CO₃ 与 NaHCO₃ 性质对比与标准实验室动态模拟</span>
+        </div>
+        <div class="question-block">
+            <!-- 升级版 PhET 动态模拟器 -->
+            <div class="sim-embed-container">
+                <div class="sim-header">
+                    <span>🧪 真实实验室模拟：NaHCO₃ 热分解与盐酸反应对比</span>
+                </div>
+                <div class="sim-main">
+                    <div class="sim-canvas-area">
+                        <canvas id="simCanvas2" width="560" height="260" style="max-width:100%; height:auto;"></canvas>
+                        <div style="width:100%; display:flex; justify-content:space-between; margin-top:6px; font-size:12px; background:#2c3e50; color:#fff; padding:4px 8px; border-radius:4px;">
+                            <span>当前状态: <span id="sim-status">标准实验室装置已就绪</span></span>
+                            <span id="sim-eq" style="color:#f1c40f; font-weight:bold;">2NaHCO₃ --Δ--> Na₂CO₃ + H₂O + CO₂↑</span>
+                        </div>
+                    </div>
+                    <div class="sim-control-panel">
+                        <span style="font-size:12px; font-weight:bold; color:#7f8c8d;">点击执行实验观察：</span>
+                        <button class="sim-btn primary" onclick="runHeatSim()">🔥 1. 试管加热 NaHCO₃ 固体（带石灰水检验）</button>
+                        <button class="sim-btn" onclick="runAcidSim('Na2CO3')">🧪 2. 向 Na₂CO₃ 溶液滴加稀盐酸</button>
+                        <button class="sim-btn" onclick="runAcidSim('NaHCO3')">🧪 3. 向 NaHCO₃ 溶液滴加稀盐酸</button>
+                        <div class="sim-obs-box" id="obs-text2">
+                            点击上方按钮，观察模拟器中画出的真实化学装置与现象变化。
+                        </div>
+                        <button class="sim-btn" onclick="drawBaseSetup()" style="margin-top:auto;">↺ 重置装置</button>
+                    </div>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">性质</th>
+                        <th style="width: 40%;">碳酸钠 (Na₂CO₃ / 纯碱 / 苏打)</th>
+                        <th style="width: 40%;">碳酸氢钠 (NaHCO₃ / 小苏打)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1. 水溶性与 pH</td>
+                        <td>易溶于水，水溶液碱性较
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">强</span>
+                            </span> (pH 较大)
+                        </td>
+                        <td>微溶/溶解度较
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">小</span>
+                            </span>，水溶液呈弱碱性
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2. 热稳定性</td>
+                        <td>受热
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">不分解</span>
+                            </span>
+                        </td>
+                        <td>受热易分解：
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">2NaHCO₃ --Δ--> Na₂CO₃ + H₂O + CO₂↑</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3. 与 HCl 反应剧烈度</td>
+                        <td>反应相对平缓（分步进行：CO₃²⁻ → HCO₃⁻ → CO₂）</td>
+                        <td>反应极
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">剧烈</span>
+                            </span>（瞬间产生大量 CO₂）
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Task 4 -->
+        <div class="section-title">
+            <span>任务四：应用迁移与除杂转化</span>
+        </div>
+        <div class="question-block">
+            <p>1. <strong>除杂方案：</strong>若除去 Na₂CO₃ 固体中混有的 NaHCO₃ 杂质，最简便的方法是：
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">加热灼烧固体至不再产生气体</span>
+                </span>。
+            </p>
+            <p>2. <strong>溶液转化：</strong>向饱和 Na₂CO₃ 溶液中通入过量 CO₂，有白色晶体析出，反应的化学方程式为：
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">Na₂CO₃ + CO₂ + H₂O → 2NaHCO₃↓</span>
+                </span>。
+            </p>
+        </div>
+
+        <!-- NotebookLM 心智图 -->
+        <div class="mindmap-container">
+            <div class="mindmap-header">
+                <div class="mindmap-title">🧠 9.2 钠和钾 Important Compounds 知识结构图</div>
+                <div>
+                    <button class="btn btn-outline" style="color:#61afef; border-color:#3e4451; padding:2px 8px; font-size:12px;" onclick="toggleMindmap()">展开/收起心智图</button>
+                </div>
+            </div>
+            <div class="mindmap-content" id="mindmap-content">
+                <div class="h-tree">
+                    <div class="h-node root has-children" onclick="toggleHNode(this)">钠和钾 Important Compounds <span class="toggle-btn">+</span></div>
+                    <ul>
+                        <li>
+                            <div class="h-node branch has-children" onclick="toggleHNode(this)">钠的氧化物 <span class="toggle-btn">+</span></div>
+                            <ul>
+                                <li><div class="h-node leaf">Na₂O：白色固体，碱性氧化物</div></li>
+                                <li><div class="h-node leaf">Na₂O₂：淡黄色，强氧化性，供氧剂</div></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="h-node branch has-children" onclick="toggleHNode(this)">碳酸盐与碳酸氢盐 <span class="toggle-btn">+</span></div>
+                            <ul>
+                                <li><div class="h-node leaf">Na₂CO₃：纯碱，热稳定，与酸分步反应</div></li>
+                                <li><div class="h-node leaf">NaHCO₃：小苏打，热不稳定，反应剧烈</div></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="h-node branch has-children" onclick="toggleHNode(this)">苛性钠与氯碱工业 <span class="toggle-btn">+</span></div>
+                            <ul>
+                                <li><div class="h-node leaf">NaOH：强碱、潮解、吸收 CO₂ 变质</div></li>
+                                <li><div class="h-node leaf">氯碱工业：电解饱和食盐水</div></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // --- 答案交互逻辑 ---
+        function toggleAns(btnElement) {
+            const content = btnElement.nextElementSibling;
+            content.classList.toggle('show');
+            btnElement.classList.toggle('hidden');
+        }
+
+        function toggleBlockAns(btnElement) {
+            const content = btnElement.nextElementSibling;
+            const isShow = content.classList.toggle('show');
+            btnElement.textContent = isShow ? "收起方案" : "展开方案";
+        }
+
+        function toggleAllAnswers(showAll) {
+            document.querySelectorAll('.ans-content').forEach(c => c.classList.toggle('show', showAll));
+            document.querySelectorAll('.ans-inline .ans-trigger').forEach(t => t.classList.toggle('hidden', showAll));
+            document.querySelectorAll('.block-ans-content').forEach(c => c.classList.toggle('show', showAll));
+            document.querySelectorAll('.block-ans-box .ans-trigger').forEach(t => {
+                t.textContent = showAll ? "收起方案" : "展开方案";
+            });
+        }
+
+        // --- 心智图交互逻辑 ---
+        function toggleMindmap() {
+            document.getElementById('mindmap-content').classList.toggle('show');
+        }
+
+        function toggleHNode(nodeElement) {
+            const nextUl = nodeElement.nextElementSibling;
+            const toggleBtn = nodeElement.querySelector('.toggle-btn');
+            if (nextUl && nextUl.tagName === 'UL') {
+                const isOpen = nextUl.classList.toggle('layer-open');
+                if(toggleBtn) toggleBtn.textContent = isOpen ? '-' : '+';
+            }
+        }
+
+        // --- Canvas 实验室级别真实绘制逻辑 ---
+        const canvas = document.getElementById('simCanvas2');
+        const ctx = canvas.getContext('2d');
+        let animId = null;
+
+        function drawBaseSetup() {
+            if (animId) cancelAnimationFrame(animId);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            document.getElementById('sim-status').innerText = "标准实验室装置已就绪";
+            document.getElementById('sim-eq').innerText = "2NaHCO₃ --Δ--> Na₂CO₃ + H₂O + CO₂↑";
+            document.getElementById('obs-text2').innerHTML = "点击右侧按钮，开始进行模拟实验。";
+
+            // 绘制铁架台与台座
+            ctx.fillStyle = '#4a5568';
+            ctx.fillRect(40, 220, 140, 12); // 底座
+            ctx.fillRect(80, 40, 8, 180);   // 立柱
+            ctx.fillRect(80, 95, 80, 6);    // 铁夹固定杆
+
+            // 酒精灯
+            ctx.fillStyle = '#cbd5e0';
+            ctx.beginPath(); ctx.arc(120, 205, 18, Math.PI, 0); ctx.fill(); // 灯体顶部
+            ctx.fillRect(102, 205, 36, 15); // 灯体底部
+            ctx.fillStyle = '#718096'; ctx.fillRect(117, 185, 6, 20); // 灯芯
+
+            // 倾斜硬质试管 (管口略向下倾斜 5 度，规范操作)
+            ctx.save();
+            ctx.translate(90, 100);
+            ctx.rotate(6 * Math.PI / 180); // 顺时针微倾
+
+            // 试管壁
+            ctx.strokeStyle = '#2b6cb0'; ctx.lineWidth = 2.5;
+            ctx.beginPath();
+            ctx.arc(10, 12, 12, Math.PI/2, Math.PI*1.5); // 试管圆底
+            ctx.lineTo(160, 0);
+            ctx.moveTo(10, 24);
+            ctx.lineTo(160, 24);
+            ctx.stroke();
+
+            // 橡皮塞
+            ctx.fillStyle = '#718096';
+            ctx.fillRect(158, 2, 12, 20);
+
+            // NaHCO3 固体粉末 (在试管底部)
+            ctx.fillStyle = '#e2e8f0';
+            ctx.beginPath();
+            ctx.ellipse(30, 16, 25, 6, 0, 0, Math.PI*2);
+            ctx.fill();
+            ctx.restore();
+
+            // 导管 (弯曲导管进入右侧烧杯)
+            ctx.strokeStyle = '#4a5568'; ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(258, 118);
+            ctx.lineTo(310, 118);
+            ctx.lineTo(310, 200);
+            ctx.lineTo(380, 200);
+            ctx.stroke();
+
+            // 右侧检验烧杯
+            ctx.strokeStyle = '#2b6cb0'; ctx.lineWidth = 2.5;
+            ctx.strokeRect(350, 150, 70, 70);
+            // 澄清石灰水溶液
+            ctx.fillStyle = 'rgba(173, 216, 230, 0.4)';
+            ctx.fillRect(352, 175, 66, 43);
+            ctx.fillStyle = '#4a5568'; ctx.font = '11px sans-serif';
+            ctx.fillText("澄清石灰水", 355, 170);
+            ctx.fillText("NaHCO₃固体", 100, 85);
+        }
+
+        function runHeatSim() {
+            drawBaseSetup();
+            document.getElementById('sim-status').innerText = "正在加热 NaHCO₃ 固体...";
+            document.getElementById('sim-eq').innerText = "2NaHCO₃ --Δ--> Na₂CO₃ + H₂O + CO₂↑";
+
+            let frame = 0;
+            function animate() {
+                // 绘制火焰动画
+                ctx.fillStyle = (frame % 2 === 0) ? '#e53e3e' : '#dd6b20';
+                ctx.beginPath();
+                ctx.arc(120, 180, 8 + Math.sin(frame*0.3)*3, 0, Math.PI*2);
+                ctx.fill();
+
+                // 试管内生成水珠 (管口附近)
+                ctx.fillStyle = '#3182ce';
+                if (frame > 20) {
+                    ctx.beginPath(); ctx.arc(220, 110, 2, 0, Math.PI*2); ctx.fill();
+                    ctx.beginPath(); ctx.arc(230, 113, 1.5, 0, Math.PI*2); ctx.fill();
+                }
+
+                // 导管口冒出 CO2 气泡
+                if (frame > 15) {
+                    ctx.fillStyle = '#2b6cb0';
+                    let bubbleY = 200 - (frame % 25);
+                    ctx.beginPath(); ctx.arc(380, bubbleY, 3, 0, Math.PI*2); ctx.fill();
+                }
+
+                // 右侧澄清石灰水逐渐浑浊 (变成乳白色 CaCO3)
+                if (frame > 30) {
+                    let cloudiness = Math.min(0.85, (frame - 30) / 70);
+                    ctx.fillStyle = `rgba(240, 240, 240, ${cloudiness})`;
+                    ctx.fillRect(352, 175, 66, 43);
+                }
+
+                frame++;
+                if (frame < 110) {
+                    animId = requestAnimationFrame(animate);
+                } else {
+                    document.getElementById('sim-status').innerText = "加热分解完成！";
+                    document.getElementById('obs-text2').innerHTML = 
+                        `<strong>实验现象总结：</strong><br>` +
+                        `1. 试管口附近出现<strong>水珠</strong>（证明有 H₂O 生成）。<br>` +
+                        `2. 澄清石灰水<strong>变浑浊</strong>（证明有 CO₂ 气体生成）。<br>` +
+                        `3. 试管内留有白色 Na₂CO₃ 固体粉末。`;
+                }
+            }
+            animate();
+        }
+
+        function runAcidSim(type) {
+            if (animId) cancelAnimationFrame(animId);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const isBicarb = type === 'NaHCO3';
+            document.getElementById('sim-status').innerText = `正在向 ${type} 溶液中滴加稀盐酸...`;
+            document.getElementById('sim-eq').innerText = isBicarb ? 
+                "NaHCO₃ + HCl → NaCl + H₂O + CO₂↑" : 
+                "Na₂CO₃ + 2HCl → 2NaCl + H₂O + CO₂↑ (分步反应)";
+
+            let frame = 0;
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // 绘制试管
+                ctx.strokeStyle = '#2b6cb0'; ctx.lineWidth = 3;
+                ctx.strokeRect(240, 60, 80, 160);
+
+                // 试管内溶液
+                ctx.fillStyle = 'rgba(66, 153, 225, 0.3)';
+                ctx.fillRect(242, 120, 76, 98);
+
+                // 胶头滴管滴酸
+                ctx.fillStyle = '#cbd5e0'; ctx.fillRect(276, 10, 8, 40);
+                ctx.fillStyle = '#e53e3e'; // 滴出的盐酸滴
+                if (frame % 20 < 10) {
+                    ctx.beginPath(); ctx.arc(280, 50 + (frame%20)*4, 3, 0, Math.PI*2); ctx.fill();
+                }
+
+                // 剧烈度差异气泡绘制
+                let bubbleCount = isBicarb ? 22 : Math.max(0, Math.floor((frame - 30) / 3));
+                ctx.fillStyle = '#3182ce';
+                for (let i = 0; i < bubbleCount; i++) {
+                    let bx = 248 + Math.random() * 64;
+                    let by = 210 - ((frame * 4 + i * 15) % 85);
+                    ctx.beginPath();
+                    ctx.arc(bx, by, 2 + Math.random()*3, 0, Math.PI*2);
+                    ctx.fill();
+                }
+
+                frame++;
+                if (frame < 100) {
+                    animId = requestAnimationFrame(animate);
+                } else {
+                    document.getElementById('sim-status').innerText = "滴加反应完成！";
+                    document.getElementById('obs-text2').innerHTML = isBicarb ? 
+                        `<strong>NaHCO₃ 现象：</strong>滴入盐酸后<strong>瞬间产生大量气泡</strong>，反应极剧烈！` :
+                        `<strong>Na₂CO₃ 现象：</strong>开始滴入少量盐酸时<strong>无气泡</strong>（先转化为 HCO₃⁻），继续滴加后才缓慢冒出气泡，反应相对平缓。`;
+                }
+            }
+            animate();
+        }
+
+        // 初始化绘制
+        drawBaseSetup();
+    </script>
+</body>
+</html>
