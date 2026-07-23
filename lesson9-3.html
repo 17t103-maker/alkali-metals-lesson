@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>9.3 碱金属元素周期律与焰色试验 互动课堂学习单</title>
+    <title>9.3 钠和钾 Important Compounds 互动课堂学习单</title>
     <style>
         :root {
             --primary-color: #1a365d;
@@ -34,7 +34,6 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
         }
 
-        /* Top Bar / Controls */
         .toolbar {
             display: flex;
             justify-content: space-between;
@@ -133,7 +132,6 @@
 
         .question-block { margin-bottom: 15px; padding: 0 5px; }
 
-        /* Interactive Answer Styles */
         .ans-inline { display: inline-block; position: relative; margin: 0 2px; }
 
         .ans-trigger {
@@ -190,40 +188,76 @@
         th, td { border: 1px solid var(--border-color); padding: 8px 12px; font-size: 14px; text-align: left; }
         th { background-color: #f7fafc; color: #4a5568; font-weight: 700; }
 
-        /* Flame Test Box */
         .sim-embed-container {
             border: 2px solid #2c3e50;
             border-radius: 8px;
             overflow: hidden;
-            background-color: #1a202c;
+            background-color: #f8f9fa;
             margin: 15px 0;
-            color: white;
         }
 
         .sim-header {
             background-color: #2c3e50;
+            color: white;
             padding: 8px 15px;
-            font-weight: bold;
-            font-size: 14px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        .sim-main { display: flex; flex-wrap: wrap; padding: 15px; gap: 15px; }
-
-        .flame-btn {
-            padding: 8px 12px;
-            border-radius: 6px;
-            border: none;
+            font-size: 14px;
             font-weight: bold;
-            cursor: pointer;
-            transition: 0.2s;
-            font-size: 12.5px;
         }
-        .flame-btn:hover { opacity: 0.9; transform: scale(1.02); }
 
-        /* Mindmap Styles */
+        .sim-main { display: flex; flex-wrap: wrap; padding: 10px; gap: 10px; background: #eef2f5; }
+
+        .sim-canvas-area {
+            flex: 2;
+            min-width: 340px;
+            background: #fff;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border: 1px solid #cbd5e0;
+        }
+
+        .sim-control-panel {
+            flex: 1;
+            min-width: 240px;
+            background: #fff;
+            border-radius: 6px;
+            padding: 12px;
+            border: 1px solid #cbd5e0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sim-btn {
+            padding: 8px 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            background: #edf2f7;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 13px;
+            transition: 0.2s;
+            text-align: left;
+        }
+
+        .sim-btn:hover { background: #e2e8f0; }
+        .sim-btn.primary { background: #3182ce; color: white; border: none; }
+
+        .sim-obs-box {
+            background: #fff9db;
+            border-left: 3px solid #f1c40f;
+            padding: 10px;
+            font-size: 12.5px;
+            line-height: 1.5;
+            border-radius: 0 4px 4px 0;
+        }
+
         .mindmap-container {
             margin-top: 25px;
             background-color: #1e2227;
@@ -293,7 +327,7 @@
 
         <div class="header">
             <div class="school-name">居銮中华中学</div>
-            <div class="title">高一理科班化学课堂学习单 —— 9.3 碱金属元素周期律与焰色试验（互动导学版）</div>
+            <div class="title">高一理科班化学课堂学习单 —— 9.3 钠和钾 Important Compounds（互动导学版）</div>
             <div class="info-bar">
                 <span>班级：S1S1</span>
                 <span>姓名：________________</span>
@@ -305,182 +339,237 @@
         <div class="objectives">
             <p>【核心素养与学习目标】</p>
             <ul>
-                <li><strong>结构决定性质：</strong>掌握碱金属（Li, Na, K, Rb, Cs）从上到下金属性、还原性及与水/氧气反应剧烈度的递变规律。</li>
-                <li><strong>实验与鉴定：</strong>掌握焰色试验的标准操作步骤（洗、烧、蘸、烧、洗），记住 Na（黄）与 K（浅紫，透蓝钴玻璃）的特征焰色。</li>
-                <li><strong>微观跃迁：</strong>理解焰色反应的物理本质（电子吸收能量跃迁至激发态，回到基态时释放特定波长光谱）。</li>
+                <li><strong>对比与推理：</strong>对比 Na₂O 与 Na₂O₂ 的性质差异[cite: 1]；掌握 Na₂CO₃ 与 NaHCO₃ 的水溶性、热稳定性及与酸反应剧烈度的异同[cite: 1]。</li>
+                <li><strong>生活与工业：</strong>掌握氢氧化钠（NaOH）易潮解与吸收 CO₂ 变质的检验方法[cite: 1]；了解氯碱工业及硝酸钾（KNO₃）作为化肥/火药原料的用途[cite: 1]。</li>
             </ul>
         </div>
 
         <!-- Task 1 -->
         <div class="section-title">
-            <span>任务一：核心探究 —— 焰色试验（Flame Test）互动模拟</span>
-        </div>
-        <div class="question-block">
-            <div class="sim-embed-container">
-                <div class="sim-header">
-                    <span>🔥 经典焰色试验光谱与火焰动态模拟器</span>
-                    <span id="flame-status" style="font-size:12px; color:#f6e05e;">当前测试元素: 钠 (Na)</span>
-                </div>
-                <div class="sim-main">
-                    <div style="flex:1.2; text-align:center;">
-                        <canvas id="flameCanvas" width="340" height="210" style="background:#000; border-radius:6px; max-width:100%;"></canvas>
-                    </div>
-                    <div style="flex:1; display:flex; flex-direction:column; gap:8px;">
-                        <span style="font-size:13px; color:#a0aec0;">点击测试不同金属阳离子：</span>
-                        <div style="display:flex; gap:6px; flex-wrap:wrap;">
-                            <button class="flame-btn" style="background:#e53e3e; color:white;" onclick="testFlame('Li', '#ff4d4d', '紫红色')">锂 (Li - 紫红)</button>
-                            <button class="flame-btn" style="background:#ecc94b; color:black;" onclick="testFlame('Na', '#f6e05e', '黄色')">钠 (Na - 黄)</button>
-                            <button class="flame-btn" style="background:#9f7aea; color:white;" onclick="testFlame('K', '#b794f4', '淡紫色')">钾 (K - 淡紫)</button>
-                            <button class="flame-btn" style="background:#38a169; color:white;" onclick="testFlame('Cu', '#48bb78', '绿色')">铜 (Cu - 绿)</button>
-                        </div>
-                        <div id="flame-obs" style="background:#2d3748; padding:10px; border-radius:4px; font-size:12.5px; line-height:1.5; margin-top:6px;">
-                            点击元素按钮观察火焰特征颜色及注意事项。
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <p>1. <strong>焰色试验标准规范五步法：</strong></p>
-            <p style="margin-left:15px; font-size:14px;">
-                ① <strong>洗：</strong>用
-                <span class="ans-inline">
-                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
-                    <span class="ans-content">稀盐酸</span>
-                </span> 洗净铂丝（或光洁无锈的铁丝）；<br>
-                ② <strong>烧：</strong>放在无色火焰上灼烧至
-                <span class="ans-inline">
-                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
-                    <span class="ans-content">与原火焰颜色相同</span>
-                </span> 为止；<br>
-                ③ <strong>蘸：</strong>蘸取待测试样；<br>
-                ④ <strong>烧：</strong>放在外焰上灼烧，观察火焰颜色；<br>
-                ⑤ <strong>滤（特殊）：</strong>检验钾元素时，必须透过
-                <span class="ans-inline">
-                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
-                    <span class="ans-content">蓝色钴玻璃</span>
-                </span> 观察，目的是
-                <span class="ans-inline">
-                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
-                    <span class="ans-content">滤去钠盐微量杂质的黄光干扰</span>
-                </span>。
-            </p>
-        </div>
-
-        <!-- Task 2 -->
-        <div class="section-title">
-            <span>任务二：碱金属元素周期律与性质递变归纳</span>
+            <span>任务一：钠的氧化物对比 —— Na₂O 与 Na₂O₂</span>
         </div>
         <div class="question-block">
             <table>
                 <thead>
                     <tr>
-                        <th style="width: 30%;">碱金属递变维 (Li → Fr)</th>
-                        <th style="width: 70%;">规律与科学事实</th>
+                        <th style="width: 25%;">对比项目</th>
+                        <th style="width: 37.5%;">氧化钠 (Na₂O)</th>
+                        <th style="width: 37.5%;">过氧化钠 (Na₂O₂)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1. 原子半径</td>
-                        <td>逐渐
+                        <td>1. 颜色与状态</td>
+                        <td>白色固体[cite: 1]</td>
+                        <td>
                             <span class="ans-inline">
                                 <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
-                                <span class="ans-content">增大</span>
+                                <span class="ans-content">淡黄色固体</span>
+                            </span>[cite: 1]
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2. 氧元素化合价</td>
+                        <td>-2 价</td>
+                        <td>
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">-1 价</span>
                             </span>
                         </td>
                     </tr>
                     <tr>
-                        <td>2. 金属性 & 还原性</td>
-                        <td>逐渐
+                        <td>3. 与 H₂O 反应方程式</td>
+                        <td>Na₂O + H₂O → 2NaOH</td>
+                        <td>
                             <span class="ans-inline">
                                 <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
-                                <span class="ans-content">增强</span>
-                            </span> (铯 Cs 是自然界金属性极强的稳定元素)
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3. 单质密度</td>
-                        <td>总体呈增大趋势（注：
-                            <span class="ans-inline">
-                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
-                                <span class="ans-content">钾 K 的密度反常比 Na 小</span>
-                            </span>）
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4. 单质熔沸点</td>
-                        <td>逐渐
-                            <span class="ans-inline">
-                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
-                                <span class="ans-content">降低</span>
+                                <span class="ans-content">2Na₂O₂ + 2H₂O → 4NaOH + O₂↑</span>
                             </span>
                         </td>
                     </tr>
                     <tr>
-                        <td>5. 与 H₂O 反应剧烈度</td>
-                        <td>Li(平缓) → Na(熔游) → K(燃烧爆鸣) → Rb/Cs(
+                        <td>4. 与 CO₂ 反应方程式</td>
+                        <td>Na₂O + CO₂ → Na₂CO₃</td>
+                        <td>
                             <span class="ans-inline">
                                 <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
-                                <span class="ans-content">剧烈爆炸</span>
-                            </span>)
+                                <span class="ans-content">2Na₂O₂ + 2CO₂ → 2Na₂CO₃ + O₂</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5. 特殊用途</td>
+                        <td>化工原料</td>
+                        <td>呼吸面具与潜水艇中的
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">供氧剂</span>
+                            </span> 及漂白剂
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- Task 3 -->
+        <!-- Task 2 -->
         <div class="section-title">
-            <span>任务三：随堂巩固测评与推断</span>
+            <span>任务二：氢氧化钠（NaOH）的潮解与变质检验</span>
         </div>
         <div class="question-block">
-            <p>1. <strong>推断预测：</strong>放射性元素钫（Fr）位于第 7 周期 IA 族。下列关于 Fr 的预测陈述，<strong>错误</strong>的是：（
+            <p>1. <strong>潮解与变质：</strong>氢氧化钠俗称烧碱、火碱、苛性钠[cite: 1]，极易吸水而潮解，在空气中吸收 CO₂ 变质的化学方程式为：
                 <span class="ans-inline">
-                    <button class="ans-trigger" onclick="toggleAns(this)">点击揭晓</button>
-                    <span class="ans-content">B</span>
-                </span> ）
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">2NaOH + CO₂ → Na₂CO₃ + H₂O</span>
+                </span>[cite: 1]。
             </p>
-            <p style="margin-left:15px; font-size:14px; color:#4a5568;">
-                A. 具有碱金属中最大的原子半径<br>
-                B. 在空气中燃烧只生成 Fr₂O 简单氧化物（错误，应生成更复杂的超氧化物）<br>
-                C. 氢氧化物 FrOH 具有极强的碱性<br>
-                D. 与水反应极度剧烈并引发爆炸
-            </p>
+            <p>2. <strong>变质检验方案设计：</strong></p>
+            <div class="block-ans-box">
+                <span>&bull; 方案一（加酸法）：</span>
+                <button class="ans-trigger" onclick="toggleBlockAns(this)">展开方案</button>
+                <div class="block-ans-content">取少量样品配成溶液，滴加足量稀盐酸[cite: 1]。若观察到有气泡（CO₂）产生，说明 NaOH 已经变质[cite: 1]。</div>
+            </div>
+            <div class="block-ans-box" style="margin-top:8px;">
+                <span>&bull; 方案二（沉淀法）：</span>
+                <button class="ans-trigger" onclick="toggleBlockAns(this)">展开方案</button>
+                <div class="block-ans-content">取少量样品配成溶液，滴加 CaCl₂ 或 BaCl₂ 溶液[cite: 1]。若产生白色沉淀（CaCO₃ 或 BaCO₃），说明已经变质[cite: 1]。</div>
+            </div>
+        </div>
 
-            <div class="block-ans-box" style="margin-top:15px;">
-                <span>2. <strong>焰色本质解析：</strong>简述为什么焰色反应属于物理变化而非化学变化？</span>
-                <button class="ans-trigger" onclick="toggleBlockAns(this)">展开解析</button>
-                <div class="block-ans-content">
-                    答：焰色反应是金属原子或离子的外层电子吸收能量后发生能级跃迁（激发态 → 基态）并以光子形式释放能量的过程。在此过程中没有新物质生成，因此属于<strong>物理变化</strong>。
+        <!-- Task 3 -->
+        <div class="section-title">
+            <span>任务三：核心探究 —— Na₂CO₃ 与 NaHCO₃ 性质对比与标准实验室动态模拟</span>
+        </div>
+        <div class="question-block">
+            <!-- 实验室 Canvas 模拟器 -->
+            <div class="sim-embed-container">
+                <div class="sim-header">
+                    <span>🧪 真实实验室模拟：NaHCO₃ 热分解与盐酸反应对比</span>
+                </div>
+                <div class="sim-main">
+                    <div class="sim-canvas-area">
+                        <canvas id="simCanvas2" width="560" height="260" style="max-width:100%; height:auto;"></canvas>
+                        <div style="width:100%; display:flex; justify-content:space-between; margin-top:6px; font-size:12px; background:#2c3e50; color:#fff; padding:4px 8px; border-radius:4px;">
+                            <span>当前状态: <span id="sim-status">标准实验室装置已就绪</span></span>
+                            <span id="sim-eq" style="color:#f1c40f; font-weight:bold;">2NaHCO₃ --Δ--> Na₂CO₃ + H₂O + CO₂↑</span>
+                        </div>
+                    </div>
+                    <div class="sim-control-panel">
+                        <span style="font-size:12px; font-weight:bold; color:#7f8c8d;">点击执行实验观察：</span>
+                        <button class="sim-btn primary" onclick="runHeatSim()">🔥 1. 试管加热 NaHCO₃ 固体（带石灰水检验）</button>
+                        <button class="sim-btn" onclick="runAcidSim('Na2CO3')">🧪 2. 向 Na₂CO₃ 溶液滴加稀盐酸</button>
+                        <button class="sim-btn" onclick="runAcidSim('NaHCO3')">🧪 3. 向 NaHCO₃ 溶液滴加稀盐酸</button>
+                        <div class="sim-obs-box" id="obs-text2">
+                            点击上方按钮，观察模拟器中画出的真实化学装置与现象变化。
+                        </div>
+                        <button class="sim-btn" onclick="drawBaseSetup()" style="margin-top:auto;">↺ 重置装置</button>
+                    </div>
                 </div>
             </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">性质</th>
+                        <th style="width: 40%;">碳酸钠 (Na₂CO₃ / 纯碱 / 苏打)</th>
+                        <th style="width: 40%;">碳酸氢钠 (NaHCO₃ / 小苏打)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1. 水溶性与 pH</td>
+                        <td>易溶于水，水溶液碱性较
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">强</span>
+                            </span> (pH 较大)[cite: 1]
+                        </td>
+                        <td>微溶/溶解度较
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">小</span>
+                            </span>，水溶液呈弱碱性[cite: 1]
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2. 热稳定性</td>
+                        <td>受热
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">不分解</span>
+                            </span>[cite: 1]
+                        </td>
+                        <td>受热易分解：
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">2NaHCO₃ --Δ--> Na₂CO₃ + H₂O + CO₂↑</span>
+                            </span>[cite: 1]
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3. 与 HCl 反应剧烈度</td>
+                        <td>反应相对平缓（分步进行：CO₃²⁻ → HCO₃⁻ → CO₂）[cite: 1]</td>
+                        <td>反应极
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">剧烈</span>
+                            </span>（瞬间产生大量 CO₂）[cite: 1]
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Task 4 -->
+        <div class="section-title">
+            <span>任务四：转化与应用</span>
+        </div>
+        <div class="question-block">
+            <p>1. <strong>除杂方案：</strong>若除去 Na₂CO₃ 固体中混有的 NaHCO₃ 杂质，最简便的方法是：
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">加热灼烧固体至不再产生气体</span>
+                </span>[cite: 1]。
+            </p>
+            <p>2. <strong>硝酸钾（KNO₃）：</strong>硝酸钾易溶于水，溶于水时
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">吸热</span>
+                </span>（吸/放热）[cite: 1]。受热分解放出氧气：<span class="math">2KNO₃ --Δ--> 2KNO₂ + O₂↑</span>[cite: 1]，常用于制造黑火药和农用复合化肥[cite: 1]。
+            </p>
         </div>
 
         <!-- NotebookLM 心智图 -->
         <div class="mindmap-container">
             <div class="mindmap-header">
-                <div class="mindmap-title">🧠 9.3 周期律与焰色试验 知识结构图</div>
+                <div class="mindmap-title">🧠 9.3 钠和钾 Important Compounds 知识结构图</div>
                 <div>
                     <button class="btn btn-outline" style="color:#61afef; border-color:#3e4451; padding:2px 8px; font-size:12px;" onclick="toggleMindmap()">展开/收起心智图</button>
                 </div>
             </div>
             <div class="mindmap-content" id="mindmap-content">
                 <div class="h-tree">
-                    <div class="h-node root has-children" onclick="toggleHNode(this)">周期律与焰色试验 <span class="toggle-btn">+</span></div>
+                    <div class="h-node root has-children" onclick="toggleHNode(this)">9.3 钠和钾 Important Compounds <span class="toggle-btn">+</span></div>
                     <ul>
                         <li>
-                            <div class="h-node branch has-children" onclick="toggleHNode(this)">焰色试验 <span class="toggle-btn">+</span></div>
+                            <div class="h-node branch has-children" onclick="toggleHNode(this)">氧化物与氢氧化物 <span class="toggle-btn">+</span></div>
                             <ul>
-                                <li><div class="h-node leaf">物理变化：电子跃迁发光</div></li>
-                                <li><div class="h-node leaf">Na：黄色；K：淡紫色 (透蓝钴玻璃)</div></li>
-                                <li><div class="h-node leaf">步骤：洗 → 烧 → 蘸 → 烧 → 洗</div></li>
+                                <li><div class="h-node leaf">Na₂O：白色固体；Na₂O₂：淡黄色强氧化剂</div></li>
+                                <li><div class="h-node leaf">NaOH：潮解、腐蚀性，吸 CO₂ 变质</div></li>
                             </ul>
                         </li>
                         <li>
-                            <div class="h-node branch has-children" onclick="toggleHNode(this)">IA 族递变规律 <span class="toggle-btn">+</span></div>
+                            <div class="h-node branch has-children" onclick="toggleHNode(this)">碳酸盐与碳酸氢盐 <span class="toggle-btn">+</span></div>
                             <ul>
-                                <li><div class="h-node leaf">半径：Li < Na < K < Rb < Cs</div></li>
-                                <li><div class="h-node leaf">金属性/还原性：依次增强</div></li>
-                                <li><div class="h-node leaf">熔沸点：依次降低</div></li>
+                                <li><div class="h-node leaf">Na₂CO₃：纯碱，热稳定，加酸分步冒气泡</div></li>
+                                <li><div class="h-node leaf">NaHCO₃：小苏打，受热易分解，加酸瞬间剧烈冒气泡</div></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="h-node branch has-children" onclick="toggleHNode(this)">其他重要盐类 <span class="toggle-btn">+</span></div>
+                            <ul>
+                                <li><div class="h-node leaf">NaCl/KCl：调味、化工原料、食盐晒制</div></li>
+                                <li><div class="h-node leaf">KNO₃：强氧化性、火药、化肥</div></li>
                             </ul>
                         </li>
                     </ul>
@@ -491,7 +580,6 @@
     </div>
 
     <script>
-        // --- 答案与通用展开控制 ---
         function toggleAns(btnElement) {
             const content = btnElement.nextElementSibling;
             content.classList.toggle('show');
@@ -501,7 +589,7 @@
         function toggleBlockAns(btnElement) {
             const content = btnElement.nextElementSibling;
             const isShow = content.classList.toggle('show');
-            btnElement.textContent = isShow ? "收起解析" : "展开解析";
+            btnElement.textContent = isShow ? "收起方案" : "展开方案";
         }
 
         function toggleAllAnswers(showAll) {
@@ -509,11 +597,10 @@
             document.querySelectorAll('.ans-inline .ans-trigger').forEach(t => t.classList.toggle('hidden', showAll));
             document.querySelectorAll('.block-ans-content').forEach(c => c.classList.toggle('show', showAll));
             document.querySelectorAll('.block-ans-box .ans-trigger').forEach(t => {
-                t.textContent = showAll ? "收起解析" : "展开解析";
+                t.textContent = showAll ? "收起方案" : "展开方案";
             });
         }
 
-        // --- 心智图交互逻辑 ---
         function toggleMindmap() {
             document.getElementById('mindmap-content').classList.toggle('show');
         }
@@ -527,70 +614,161 @@
             }
         }
 
-        // --- 焰色反应 Canvas 动态绘制逻辑 ---
-        const fc = document.getElementById('flameCanvas');
-        const fctx = fc.getContext('2d');
-        let flameAnimId = null;
+        // Canvas 实验室加热模拟
+        const canvas = document.getElementById('simCanvas2');
+        const ctx = canvas.getContext('2d');
+        let animId = null;
 
-        function testFlame(elem, colorHex, colorName) {
-            if (flameAnimId) cancelAnimationFrame(flameAnimId);
+        function drawBaseSetup() {
+            if (animId) cancelAnimationFrame(animId);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            document.getElementById('sim-status').innerText = "标准实验室装置已就绪";
+            document.getElementById('sim-eq').innerText = "2NaHCO₃ --Δ--> Na₂CO₃ + H₂O + CO₂↑";
+            document.getElementById('obs-text2').innerHTML = "点击右侧按钮，开始进行模拟实验。";
 
-            document.getElementById('flame-status').innerText = `当前测试元素: ${elem} (${colorName})`;
+            ctx.fillStyle = '#4a5568';
+            ctx.fillRect(40, 220, 140, 12);
+            ctx.fillRect(80, 40, 8, 180);
+            ctx.fillRect(80, 95, 80, 6);
 
-            let frame = 0;
-            function render() {
-                fctx.clearRect(0, 0, fc.width, fc.height);
+            ctx.fillStyle = '#cbd5e0';
+            ctx.beginPath(); ctx.arc(120, 205, 18, Math.PI, 0); ctx.fill();
+            ctx.fillRect(102, 205, 36, 15);
+            ctx.fillStyle = '#718096'; ctx.fillRect(117, 185, 6, 20);
 
-                // 1. 本生灯底座与灯管
-                fctx.fillStyle = '#718096';
-                fctx.fillRect(150, 160, 40, 30); // 灯座
-                fctx.fillStyle = '#a0aec0';
-                fctx.fillRect(162, 110, 16, 50); // 金属管
+            ctx.save();
+            ctx.translate(90, 100);
+            ctx.rotate(6 * Math.PI / 180);
 
-                // 2. 铂丝棒
-                fctx.strokeStyle = '#e2e8f0'; fctx.lineWidth = 1.5;
-                fctx.beginPath();
-                fctx.moveTo(70, 95);
-                fctx.lineTo(168, 95);
-                fctx.stroke();
+            ctx.strokeStyle = '#2b6cb0'; ctx.lineWidth = 2.5;
+            ctx.beginPath();
+            ctx.arc(10, 12, 12, Math.PI/2, Math.PI*1.5);
+            ctx.lineTo(160, 0);
+            ctx.moveTo(10, 24);
+            ctx.lineTo(160, 24);
+            ctx.stroke();
 
-                // 3. 动态火焰效果
-                let flicker = Math.sin(frame * 0.2) * 4;
+            ctx.fillStyle = '#718096';
+            ctx.fillRect(158, 2, 12, 20);
 
-                // 外焰 (特征焰色)
-                fctx.fillStyle = colorHex;
-                fctx.beginPath();
-                fctx.moveTo(170, 30 + flicker);
-                fctx.quadraticCurveTo(130, 80, 158, 110);
-                fctx.lineTo(182, 110);
-                fctx.quadraticCurveTo(210, 80, 170, 30 + flicker);
-                fctx.fill();
+            ctx.fillStyle = '#e2e8f0';
+            ctx.beginPath();
+            ctx.ellipse(30, 16, 25, 6, 0, 0, Math.PI*2);
+            ctx.fill();
+            ctx.restore();
 
-                // 内焰 (蓝色)
-                fctx.fillStyle = 'rgba(66, 153, 225, 0.85)';
-                fctx.beginPath();
-                fctx.moveTo(170, 75);
-                fctx.quadraticCurveTo(155, 95, 164, 110);
-                fctx.lineTo(176, 110);
-                fctx.quadraticCurveTo(185, 95, 170, 75);
-                fctx.fill();
+            ctx.strokeStyle = '#4a5568'; ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(258, 118);
+            ctx.lineTo(310, 118);
+            ctx.lineTo(310, 200);
+            ctx.lineTo(380, 200);
+            ctx.stroke();
 
-                frame++;
-                flameAnimId = requestAnimationFrame(render);
-            }
-            render();
-
-            // 观察说明更新
-            const obs = document.getElementById('flame-obs');
-            if (elem === 'K') {
-                obs.innerHTML = `<strong>${elem} 元素焰色：</strong>呈特征<strong>${colorName}</strong>。<br>⚠️ <strong>关键细节：</strong>由于钾盐中常混有微量钠盐，观察时必须透过<strong>蓝色钴玻璃</strong>（滤去 Na 的黄光干扰）。`;
-            } else {
-                obs.innerHTML = `<strong>${elem} 元素焰色：</strong>在无色火焰上灼烧呈鲜艳的<strong>${colorName}</strong>。<br>💡 <strong>现象应用：</strong>节日烟花的绚丽色彩正是利用了不同金属元素的焰色反应。`;
-            }
+            ctx.strokeStyle = '#2b6cb0'; ctx.lineWidth = 2.5;
+            ctx.strokeRect(350, 150, 70, 70);
+            ctx.fillStyle = 'rgba(173, 216, 230, 0.4)';
+            ctx.fillRect(352, 175, 66, 43);
+            ctx.fillStyle = '#4a5568'; ctx.font = '11px sans-serif';
+            ctx.fillText("澄清石灰水", 355, 170);
+            ctx.fillText("NaHCO₃固体", 100, 85);
         }
 
-        // 默认初始化呈现 钠 (Na) 的黄光
-        testFlame('Na', '#f6e05e', '黄色');
+        function runHeatSim() {
+            drawBaseSetup();
+            document.getElementById('sim-status').innerText = "正在加热 NaHCO₃ 固体...";
+            document.getElementById('sim-eq').innerText = "2NaHCO₃ --Δ--> Na₂CO₃ + H₂O + CO₂↑";
+
+            let frame = 0;
+            function animate() {
+                ctx.fillStyle = (frame % 2 === 0) ? '#e53e3e' : '#dd6b20';
+                ctx.beginPath();
+                ctx.arc(120, 180, 8 + Math.sin(frame*0.3)*3, 0, Math.PI*2);
+                ctx.fill();
+
+                ctx.fillStyle = '#3182ce';
+                if (frame > 20) {
+                    ctx.beginPath(); ctx.arc(220, 110, 2, 0, Math.PI*2); ctx.fill();
+                    ctx.beginPath(); ctx.arc(230, 113, 1.5, 0, Math.PI*2); ctx.fill();
+                }
+
+                if (frame > 15) {
+                    ctx.fillStyle = '#2b6cb0';
+                    let bubbleY = 200 - (frame % 25);
+                    ctx.beginPath(); ctx.arc(380, bubbleY, 3, 0, Math.PI*2); ctx.fill();
+                }
+
+                if (frame > 30) {
+                    let cloudiness = Math.min(0.85, (frame - 30) / 70);
+                    ctx.fillStyle = `rgba(240, 240, 240, ${cloudiness})`;
+                    ctx.fillRect(352, 175, 66, 43);
+                }
+
+                frame++;
+                if (frame < 110) {
+                    animId = requestAnimationFrame(animate);
+                } else {
+                    document.getElementById('sim-status').innerText = "加热分解完成！";
+                    document.getElementById('obs-text2').innerHTML = 
+                        `<strong>实验现象总结：</strong><br>` +
+                        `1. 试管口附近出现<strong>水珠</strong>（证明有 H₂O 生成）[cite: 1]。<br>` +
+                        `2. 澄清石灰水<strong>变浑浊</strong>（证明有 CO₂ 生成）[cite: 1]。<br>` +
+                        `3. 试管内留有白色 Na₂CO₃ 固体。`;
+                }
+            }
+            animate();
+        }
+
+        function runAcidSim(type) {
+            if (animId) cancelAnimationFrame(animId);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const isBicarb = type === 'NaHCO3';
+            document.getElementById('sim-status').innerText = `正在向 ${type} 溶液中滴加稀盐酸...`;
+            document.getElementById('sim-eq').innerText = isBicarb ? 
+                "NaHCO₃ + HCl → NaCl + H₂O + CO₂↑" : 
+                "Na₂CO₃ + 2HCl → 2NaCl + H₂O + CO₂↑ (分步反应)";
+
+            let frame = 0;
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                ctx.strokeStyle = '#2b6cb0'; ctx.lineWidth = 3;
+                ctx.strokeRect(240, 60, 80, 160);
+
+                ctx.fillStyle = 'rgba(66, 153, 225, 0.3)';
+                ctx.fillRect(242, 120, 76, 98);
+
+                ctx.fillStyle = '#cbd5e0'; ctx.fillRect(276, 10, 8, 40);
+                ctx.fillStyle = '#e53e3e';
+                if (frame % 20 < 10) {
+                    ctx.beginPath(); ctx.arc(280, 50 + (frame%20)*4, 3, 0, Math.PI*2); ctx.fill();
+                }
+
+                let bubbleCount = isBicarb ? 22 : Math.max(0, Math.floor((frame - 30) / 3));
+                ctx.fillStyle = '#3182ce';
+                for (let i = 0; i < bubbleCount; i++) {
+                    let bx = 248 + Math.random() * 64;
+                    let by = 210 - ((frame * 4 + i * 15) % 85);
+                    ctx.beginPath();
+                    ctx.arc(bx, by, 2 + Math.random()*3, 0, Math.PI*2);
+                    ctx.fill();
+                }
+
+                frame++;
+                if (frame < 100) {
+                    animId = requestAnimationFrame(animate);
+                } else {
+                    document.getElementById('sim-status').innerText = "滴加反应完成！";
+                    document.getElementById('obs-text2').innerHTML = isBicarb ? 
+                        `<strong>NaHCO₃ 现象：</strong>滴入盐酸后<strong>瞬间产生大量气泡</strong>，反应极剧烈！[cite: 1]` :
+                        `<strong>Na₂CO₃ 现象：</strong>开始滴入少量盐酸时<strong>无气泡</strong>（先转化为 HCO₃⁻），继续滴加后才冒出气泡，反应相对平缓[cite: 1]。`;
+                }
+            }
+            animate();
+        }
+
+        drawBaseSetup();
     </script>
 </body>
 </html>
