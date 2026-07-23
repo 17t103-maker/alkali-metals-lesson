@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.1 钠和钾的性质 互动课堂学习单</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --accent-color: #2b6cb0;
+            --ans-color: #c53030;
+            --ans-bg: #fff5f5;
+            --bg-gray: #f7fafc;
+            --border-color: #e2e8f0;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Top Bar / Controls */
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #edf2f7;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .btn {
+            background-color: #3182ce;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn:hover {
+            background-color: #2b6cb0;
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #4a5568;
+            border: 1px solid #cbd5e0;
+        }
+
+        .btn-outline:hover {
+            background-color: #e2e8f0;
+            color: #2d3748;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .school-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 2px;
+            margin: 0 0 5px 0;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4a5568;
+            margin: 0 0 12px 0;
+        }
+
+        .info-bar {
+            font-size: 14px;
+            color: #718096;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .objectives {
+            background-color: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .objectives p {
+            margin: 0 0 6px 0;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+
+        .objectives ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary-color);
+            background-color: #e2e8f0;
+            padding: 8px 14px;
+            border-radius: 6px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .question-block {
+            margin-bottom: 15px;
+            padding: 0 5px;
+        }
+
+        /* Interactive Answer Styles */
+        .ans-inline {
+            display: inline-block;
+            position: relative;
+            margin: 0 2px;
+        }
+
+        .ans-trigger {
+            background-color: #edf2f7;
+            color: #4a5568;
+            border: 1px dashed #cbd5e0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.2s;
+        }
+
+        .ans-trigger:hover {
+            background-color: #feebc8;
+            border-color: #f6ad55;
+            color: #c05621;
+        }
+
+        .ans-content {
+            display: none;
+            color: var(--ans-color);
+            font-weight: 700;
+            background-color: var(--ans-bg);
+            border-bottom: 2px solid var(--ans-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .ans-content.show {
+            display: inline-block;
+        }
+
+        .ans-trigger.hidden {
+            display: none;
+        }
+
+        .block-ans-box {
+            margin-top: 8px;
+        }
+
+        .block-ans-content {
+            display: none;
+            background-color: var(--ans-bg);
+            border: 1px solid #feb2b2;
+            border-left: 4px solid var(--ans-color);
+            padding: 10px 14px;
+            border-radius: 4px;
+            color: var(--ans-color);
+            font-weight: bold;
+            margin-top: 6px;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .block-ans-content.show {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-3px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .math {
+            font-family: "Times New Roman", Georgia, serif;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            background-color: #fff;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f7fafc;
+            color: #4a5568;
+            font-weight: 700;
+        }
+
+        .safety-alert {
+            border: 1px dashed #e53e3e;
+            background-color: #fff5f5;
+            color: #c53030;
+            padding: 10px 14px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            font-weight: 600;
+            font-size: 13.5px;
+        }
+
+        /* 媒体与模拟器容器 */
+        .media-container {
+            margin: 15px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            background: #000;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%; border: 0;
+        }
+
+        /* PhET 模拟器嵌入样式 */
+        .sim-embed-container {
+            border: 2px solid #2c3e50;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #f8f9fa;
+            margin: 15px 0;
+        }
+
+        .sim-header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 8px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sim-tabs {
+            display: flex;
+            gap: 5px;
+        }
+
+        .sim-tab-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+
+        .sim-tab-btn.active, .sim-tab-btn:hover {
+            background: #3498db;
+            font-weight: bold;
+        }
+
+        .sim-main {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            gap: 10px;
+            background: #eef2f5;
+        }
+
+        .sim-canvas-area {
+            flex: 2;
+            min-width: 320px;
+            background: #fff;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border: 1px solid #cbd5e0;
+        }
+
+        .sim-control-panel {
+            flex: 1;
+            min-width: 240px;
+            background: #fff;
+            border-radius: 6px;
+            padding: 12px;
+            border: 1px solid #cbd5e0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sim-btn-group {
+            display: flex;
+            gap: 5px;
+        }
+
+        .sim-btn {
+            flex: 1;
+            padding: 6px 10px;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            background: #edf2f7;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 12px;
+            transition: 0.2s;
+        }
+
+        .sim-btn.active {
+            background: #3498db;
+            color: white;
+            border-color: #2980b9;
+        }
+
+        .sim-btn.primary { background: #2ecc71; color: white; border: none; }
+        .sim-btn.danger { background: #e74c3c; color: white; border: none; }
+
+        .sim-obs-box {
+            background: #fff9db;
+            border-left: 3px solid #f1c40f;
+            padding: 8px;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        /* 电子层结构展示 */
+        .electron-popover {
+            display: none;
+            margin-top: 8px;
+            padding: 12px;
+            background-color: #f7fafc;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-size: 13.5px;
+        }
+        .electron-popover.show { display: block; }
+
+        /* 电解模拟器样式 */
+        .electrolysis-sim-box {
+            margin-top: 10px;
+            background: #2d3748;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #3182ce;
+        }
+
+        /* ================= NotebookLM 水平向右展开心智图 (Horizontal Mindmap) ================= */
+        .mindmap-container {
+            margin-top: 25px;
+            background-color: #1e2227;
+            color: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .mindmap-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #343a40;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .mindmap-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #61afef;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mindmap-content {
+            display: none;
+            overflow-x: auto;
+            padding: 15px 5px;
+        }
+
+        .mindmap-content.show {
+            display: block;
+        }
+
+        /* 水平排布 CSS Tree */
+        .h-tree {
+            display: flex;
+            align-items: center;
+        }
+
+        .h-tree ul {
+            display: none; /* 默认折叠子分支 */
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 28px;
+            position: relative;
+            list-style: none;
+            margin: 0;
+        }
+
+        .h-tree ul.layer-open {
+            display: flex;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .h-tree li {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+        }
+
+        /* 水平连接线 */
+        .h-tree li::before {
+            content: "";
+            position: absolute;
+            left: -28px;
+            top: 50%;
+            width: 28px;
+            height: 1px;
+            background-color: #4b5263;
+        }
+
+        /* 垂直分叉线 */
+        .h-tree li::after {
+            content: "";
+            position: absolute;
+            left: -28px;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            background-color: #4b5263;
+        }
+
+        .h-tree li:first-child::after {
+            top: 50%;
+            height: 50%;
+        }
+
+        .h-tree li:last-child::after {
+            height: 50%;
+        }
+
+        .h-tree li:only-child::after {
+            display: none;
+        }
+
+        /* 节点框样式 */
+        .h-node {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1px solid #3e4451;
+            background: #2c313a;
+            color: #abb2bf;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            white-space: nowrap;
+            transition: all 0.2s;
+            user-select: none;
+            z-index: 2;
+        }
+
+        .h-node.has-children {
+            cursor: pointer;
+        }
+
+        .h-node.has-children:hover {
+            border-color: #61afef;
+            color: #fff;
+            box-shadow: 0 0 8px rgba(97, 175, 239, 0.4);
+        }
+
+        .h-node .toggle-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            background: #3e4451;
+            color: #61afef;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .h-node.root {
+            background: #2b3a4e;
+            color: #61afef;
+            font-weight: 700;
+            font-size: 14.5px;
+            border-color: #61afef;
+        }
+
+        .h-node.branch {
+            background: #282c34;
+            color: #e5c07b;
+            font-weight: 600;
+        }
+
+        .h-node.leaf {
+            background: #21252b;
+            color: #98c379;
+            font-size: 12px;
+        }
+
+        /* Print styles */
+        @media print {
+            .toolbar, .media-container, .sim-embed-container, .electrolysis-sim-box, .mindmap-container { display: none !important; }
+            body { padding: 0; background: #fff; }
+            .container { box-shadow: none; padding: 0; max-width: 100%; }
+            .ans-trigger { display: none !important; }
+            .ans-content { display: inline-block !important; background: transparent; }
+            .block-ans-content { display: block !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Interactive Control Bar -->
+        <div class="toolbar">
+            <span style="font-weight: 600; color: #4a5568;">💡 课堂互动模式</span>
+            <div style="display: flex; gap: 10px;">
+                <a href="index.html" class="btn btn-outline" style="text-decoration: none;">🏠 返回目录</a>
+                <button class="btn" onclick="toggleAllAnswers(true)">🔓 展开全部答案</button>
+                <button class="btn btn-outline" onclick="toggleAllAnswers(false)">🔒 隐藏全部答案</button>
+                <button class="btn btn-outline" onclick="window.print()">🖨️ 打印页面</button>
+            </div>
+        </div>
+
+        <div class="header">
+            <div class="school-name">居銮中华中学</div>
+            <div class="title">高一理科班化学课堂学习单 —— 9.1 钠和钾的性质（互动导学版）</div>
+            <div class="info-bar">
+                <span>班级：S1S1</span>
+                <span>姓名：________________</span>
+                <span>学号：__________</span>
+                <span>日期：2026年___月___日</span>
+            </div>
+        </div>
+
+        <div class="objectives">
+            <p>【核心素养与学习目标】</p>
+            <ul>
+                <li><strong>宏观辨识与微观探析：</strong>掌握钠、钾与氧气、水反应的宏观现象，理解碱金属原子的外层电子结构及强还原性本质。</li>
+                <li><strong>证据推理与模型认知：</strong>基于实验视频与互动模拟器进行逻辑推理，建立“结构决定性质，性质决定存在与制法”的模型。</li>
+                <li><strong>安全红线意识：</strong>深刻认识碱金属的活泼高危性，牢固树立实验室“安全第一”的红线意识。</li>
+            </ul>
+        </div>
+
+        <!-- Task 1 -->
+        <div class="section-title">
+            <span>任务一：新课引入 —— 自然界中的碱金属与递变规律</span>
+        </div>
+        <div class="question-block">
+            <p>1. <strong>存在形态：</strong>由于碱金属的化学活性极高，它们在自然界中 
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">查看答案</button>
+                    <span class="ans-content">不能</span>
+                </span>
+                （填“能”或“不能”）以单质形态独立存在，必须以 
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">查看答案</button>
+                    <span class="ans-content">化合物</span>
+                </span>
+                形态分布。写出典型矿物的主要化学成分：<br>
+                &bull; 食盐：
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">NaCl</span>
+                </span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&bull; 硼砂：
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">Na<sub>2</sub>B<sub>4</sub>O<sub>7</sub>·10H<sub>2</sub>O</span>
+                </span>
+            </p>
+            
+            <p>2. <strong>元素周期律基础模型：</strong>点击下方表格各栏目，探索碱金属元素（Li 到 Fr）性质的递变规律：</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 50%; text-align: center;">探究核心维（从 Li 到 Fr 依次向下）</th>
+                        <th style="width: 50%; text-align: center;">性质的递变趋势与具体规律</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1. 价电子数</td>
+                        <td>均为 
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">点击揭晓</button>
+                                <span class="ans-content">1</span>
+                            </span> 个
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2. 核电荷数</td>
+                        <td>逐渐 
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">点击揭晓</button>
+                                <span class="ans-content">增大 / 增加</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3. 原子半径</td>
+                        <td>逐渐 
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">点击揭晓</button>
+                                <span class="ans-content">增大</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4. 原子核对价电子的吸引力</td>
+                        <td>逐渐 
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">点击揭晓</button>
+                                <span class="ans-content">减弱</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5. 失去最外层电子的倾向</td>
+                        <td>逐渐 
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">点击揭晓</button>
+                                <span class="ans-content">增强（更容易）</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6. 元素的金属性与强还原性</td>
+                        <td>逐渐 
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">点击揭晓</button>
+                                <span class="ans-content">增强</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7. 与水/氧气反应的活泼性</td>
+                        <td>逐渐 
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">点击揭晓</button>
+                                <span class="ans-content">增强（更剧烈）</span>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Task 2 -->
+        <div class="section-title">
+            <span>任务二：视频探究 —— 碱金属的保存、硬度与物理外观</span>
+        </div>
+        <div class="safety-alert">
+            【安全红线宣导】基于钠、钾极度活泼、遇水易爆的高危危险性，为确保绝对安全，本节课所有高危反应部分均通过高清教学影片进行深度探究，严禁私自进行现场实验！
+        </div>
+
+        <!-- Google Drive 视频嵌入视窗 -->
+        <div class="media-container">
+            <div class="video-wrapper">
+                <iframe src="https://drive.google.com/file/d/1KNZ42iPju3XHisKEhE7LlMWYWUWQD1AV/preview" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <p>1. <strong>储存与硬度：</strong>金属钠和钾必须保存在 
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">煤油（或石蜡油）</span>
+                </span>
+                中；用小刀切割它们，发现质地 
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">软</span>
+                </span>
+                （填“硬”或“软”），切面呈银白色金属光泽，但暴露在空气中极快变暗。其中金属 
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">钾（K）</span>
+                </span>
+                的变暗速率明显更快。
+            </p>
+            <p>2. <strong>化学方程式落地：</strong></p>
+            
+            <div class="block-ans-box">
+                <span>&bull; 钠的常温氧化（表面生成灰白色氧化膜）：</span>
+                <button class="ans-trigger" onclick="toggleBlockAns(this)">展开方程式</button>
+                <div class="block-ans-content">4Na(s) + O<sub>2</sub>(g) &rarr; 2Na<sub>2</sub>O(s)</div>
+            </div>
+
+            <div class="block-ans-box" style="margin-top:10px;">
+                <span>&bull; 钾的常温氧化：</span>
+                <button class="ans-trigger" onclick="toggleBlockAns(this)">展开方程式</button>
+                <div class="block-ans-content">4K(s) + O<sub>2</sub>(g) &rarr; 2K<sub>2</sub>O(s)</div>
+            </div>
+        </div>
+
+        <!-- Task 3 -->
+        <div class="section-title">
+            <span>任务三：视频探究 —— 金属钠与钾的空气燃烧实验</span>
+        </div>
+        <div class="question-block">
+            <p>1. <strong>金属钠的燃烧：</strong>钠受热迅速熔化成 
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">银白色闪亮小球</span>
+                </span> ，剧烈燃烧并闪烁出灿烂夺目的 
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">黄</span>
+                </span> 色火焰，最终留下 
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">黄</span>
+                </span> 色的固体粉末（产物名称为 
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">过氧化钠 / Na<sub>2</sub>O<sub>2</sub></span>
+                </span>）。
+            </p>
+
+            <div class="block-ans-box">
+                <span>&bull; 写出金属钠点燃燃烧的化学方程式：</span>
+                <button class="ans-trigger" onclick="toggleBlockAns(this)">展开方程式</button>
+                <div class="block-ans-content">2Na(s) + O<sub>2</sub>(g) &mdash;&mdash;&Delta; / 点燃&mdash;&mdash;&gt; Na<sub>2</sub>O<sub>2</sub>(s)</div>
+            </div>
+
+            <p style="margin-top:12px;">2. <strong>横向拓展与规律：</strong>金属钾在富氧中燃烧会形成深黄色的超氧化钾（化学式为 
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">KO<sub>2</sub></span>
+                </span>）。这说明碱金属元素随原子序数的增大，生成多元氧化物的能力逐渐 
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">增强</span>
+                </span> （填“增强”或“减弱”）。
+            </p>
+        </div>
+
+        <!-- Task 4 -->
+        <div class="section-title">
+            <span>任务四：核心探究 —— 钠、钾与水反应剧烈度大比拼</span>
+        </div>
+        <div class="question-block">
+            <p><strong>1. 金属钠与水（滴有酚酞）反应的“五字诀”拆解分析与实验模拟：</strong></p>
+            
+            <!-- 碱金属性质探究 PhET 风格模拟器 -->
+            <div class="sim-embed-container">
+                <div class="sim-header">
+                    <span>🧪 碱金属性质探究模拟器 (PhET-Style)</span>
+                    <div class="sim-tabs">
+                        <button class="sim-tab-btn" onclick="switchTab(1)">1. 保存与切割</button>
+                        <button class="sim-tab-btn" onclick="switchTab(2)">2. 空气燃烧</button>
+                        <button class="sim-tab-btn active" onclick="switchTab(3)">3. 与水反应</button>
+                        <button class="sim-tab-btn" onclick="switchTab(4)">4. 微观结构</button>
+                    </div>
+                </div>
+                <div class="sim-main">
+                    <div class="sim-canvas-area">
+                        <canvas id="simCanvas" width="550" height="300" style="max-width: 100%; height: auto;"></canvas>
+                        <div style="width:100%; display:flex; justify-content:space-between; margin-top:5px; font-size:12px; background:#2c3e50; color:#fff; padding:4px 8px; border-radius:4px;">
+                            <span>状态: <span id="status-text">烧杯装有含酚酞的水溶液</span></span>
+                            <span id="equation-text" style="color:#f1c40f; font-weight:bold;">2Na + 2H₂O → 2NaOH + H₂↑</span>
+                        </div>
+                    </div>
+                    <div class="sim-control-panel">
+                        <div>
+                            <span style="font-size:12px; font-weight:bold; color:#7f8c8d;">选择元素:</span>
+                            <div class="sim-btn-group" style="margin-top:4px;">
+                                <button class="sim-btn active" id="btn-na" onclick="selectMetal('Na')">钠 (Na)</button>
+                                <button class="sim-btn" id="btn-k" onclick="selectMetal('K')">钾 (K)</button>
+                            </div>
+                        </div>
+
+                        <!-- 各 Tab 操作控制区 -->
+                        <div id="controls-tab1" class="tab-controls" style="display:none;">
+                            <button class="sim-btn primary" onclick="runCutExperiment()" style="width:100%;">用小刀切开金属</button>
+                        </div>
+
+                        <div id="controls-tab2" class="tab-controls" style="display:none;">
+                            <button class="sim-btn danger" onclick="runBurnExperiment()" style="width:100%;">酒精灯加热点燃</button>
+                        </div>
+
+                        <div id="controls-tab3" class="tab-controls">
+                            <button class="sim-btn primary" onclick="runWaterExperiment()" style="width:100%;">投入水中反应</button>
+                        </div>
+
+                        <div id="controls-tab4" class="tab-controls" style="display:none;">
+                            <button class="sim-btn primary" onclick="triggerElectronLoss()" style="width:100%;">模拟失去最外层电子</button>
+                        </div>
+
+                        <div class="sim-obs-box" id="observation-text">
+                            点击按钮开始观察现象。
+                        </div>
+
+                        <button class="sim-btn" onclick="resetSim()" style="margin-top:auto;">↺ 重置模拟器</button>
+                    </div>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 15%; text-align: center;">字诀</th>
+                        <th style="width: 45%; text-align: center;">视频与模拟器展现的宏观细节</th>
+                        <th style="width: 40%; text-align: center;">对应的物理或化学科学本质</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align:center; font-weight:bold;">浮</td>
+                        <td>金属钠小球浮在水面上</td>
+                        <td>钠的密度比水 
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">小</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center; font-weight:bold;">熔</td>
+                        <td>钠迅速缩成闪亮的小球</td>
+                        <td>反应 
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">放</span>
+                            </span> 热，且钠的熔点低
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center; font-weight:bold;">游</td>
+                        <td>小球在水面上无序、急速游动</td>
+                        <td>反应产生的 
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">气体（H<sub>2</sub>）</span>
+                            </span> 推动小球移动
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center; font-weight:bold;">响</td>
+                        <td>声轨中传来明显的“嘶嘶”响声</td>
+                        <td>气体剧烈释放</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center; font-weight:bold;">红</td>
+                        <td>烧杯中无色的水瞬间晕染为鲜艳的粉红色</td>
+                        <td>反应生成了 
+                            <span class="ans-inline">
+                                <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                                <span class="ans-content">碱</span>
+                            </span> 性物质（NaOH）
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="block-ans-box">
+                <span>&bull; 金属钠与水反应的方程式：</span>
+                <button class="ans-trigger" onclick="toggleBlockAns(this)">展开化学式与离子式</button>
+                <div class="block-ans-content">
+                    化学方程式：2Na + 2H<sub>2</sub>O &rarr; 2NaOH + H<sub>2</sub>&uarr;<br>
+                    离子方程式：2Na + 2H<sub>2</sub>O &rarr; 2Na<sup>+</sup> + 2OH<sup>-</sup> + H<sub>2</sub>&uarr;
+                </div>
+            </div>
+
+            <p style="margin-top:12px;"><strong>2. 金属钾与水反应的横向对比与微观模型内化：</strong></p>
+            <p>&bull; <strong>宏观对比：</strong>金属钾在水面的游动速度远 
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">快</span>
+                </span> 于钠，伴随局部火花和轻微爆鸣，火焰呈特征的 
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">淡紫</span>
+                </span> 色。
+            </p>
+            
+            <p>&bull; <strong>微观本质：</strong>
+                <span class="ans-trigger" style="display:inline-block; margin-left:2px;" onclick="toggleElectronPopover()">
+                    🔍 点击查阅电子层的结构排布：Na为(2,8,1)，K为(2,8,8,1)
+                </span>
+            </p>
+            
+            <!-- 电子层结构排布展开卡片 -->
+            <div class="electron-popover" id="electron-popover">
+                <div style="font-weight:bold; color:var(--primary-color); margin-bottom:6px;">🔬 电子层结构排布对比模型：</div>
+                <div style="display:flex; gap:20px; flex-wrap:wrap;">
+                    <div>
+                        <strong>Na (钠, 原子序数 11):</strong><br>
+                        • 核外电子排布：<span class="math">2, 8, 1</span> (3个电子层)<br>
+                        • 最外层电子数：1
+                    </div>
+                    <div>
+                        <strong>K (钾, 原子序数 19):</strong><br>
+                        • 核外电子排布：<span class="math">2, 8, 8, 1</span> (4个电子层)<br>
+                        • 最外层电子数：1
+                    </div>
+                </div>
+            </div>
+
+            <p style="margin-top:8px;">钾原子电子层数较 
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">多</span>
+                </span>，半径较 
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">大</span>
+                </span>，吸引力较 
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">弱</span>
+                </span>，故更易失电子。由此得出递变结论：<span class="math">K</span> 
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">答案</button>
+                    <span class="ans-content">&gt;</span>
+                </span> <span class="math">Na</span>。
+            </p>
+        </div>
+
+        <!-- Task 5 -->
+        <div class="section-title">
+            <span>任务五：应用迁移 —— 现代工业制取技术与平衡移动</span>
+        </div>
+        <div class="question-block">
+            <p>1. <strong>金属钠的制法：</strong>现代工业采用<strong>电解熔融NaCl</strong>制取，反应式为：
+                <span class="math">2NaCl(l) &mdash;&mdash;电解&mdash;&mdash;&gt; 2Na(s) + Cl<sub>2</sub>(g)&uarr;</span>
+            </p>
+
+            <!-- 工业制钠模拟器（默认展开呈现） -->
+            <div class="electrolysis-sim-box">
+                <div style="font-weight:bold; margin-bottom:8px; color:#63b3ed; display:flex; justify-content:space-between; align-items:center;">
+                    <span>⚡ 工业 Down 槽电解熔融 NaCl 动态微观模拟器：</span>
+                    <button class="btn btn-outline" style="color:#fff; border-color:#718096; padding:2px 8px; font-size:12px;" onclick="toggleElectrolysisAnim()">开关通电状态</button>
+                </div>
+                <canvas id="electrolysisCanvas" width="500" height="180" style="background:#1a202c; border-radius:6px; width:100%;"></canvas>
+                <div style="display:flex; justify-content:space-between; margin-top:8px; font-size:13px; color:#cbd5e0; flex-wrap:wrap;">
+                    <span>阴极反应(还原): <strong>Na⁺ + e⁻ &rarr; Na(l)</strong></span>
+                    <span>阳极反应(氧化): <strong>2Cl⁻ - 2e⁻ &rarr; Cl₂(g)&uarr;</strong></span>
+                </div>
+            </div>
+
+            <p style="margin-top:15px;">2. <strong>工业制钾的逆向思辨：</strong>工业高温还原熔融氯化钾的反应为：<span class="math">KCl(l) + Na(l) &rArr; NaCl(l) + K(g)&uarr;</span> (850&deg;C)。</p>
+            
+            <div class="block-ans-box">
+                <span><strong>【核心思考与平衡原理解析】</strong>点击展开勒夏特列原理解析：</span>
+                <button class="ans-trigger" onclick="toggleBlockAns(this)">展开解析答案</button>
+                <div class="block-ans-content">
+                    原理解析：在 850&deg;C 高温下，钠的沸点高（呈液态），而钾的沸点低（转化为气体）。工业上通过不断将 <strong>钾蒸气</strong> 分离并抽走（冷凝），促使化学平衡自发且持续向 <strong>正反应（右）</strong> 方向移动。
+                </div>
+            </div>
+        </div>
+
+        <!-- Task 6 -->
+        <div class="section-title">
+            <span>任务六：随堂成果达标巩固测评与作业</span>
+        </div>
+        <div class="question-block">
+            <p>1. <strong>随堂单选：</strong>下列关于钠、钾的性质，哪项陈述是正确的科学事实？（ 
+                <span class="ans-inline">
+                    <button class="ans-trigger" onclick="toggleAns(this)">点击看选项</button>
+                    <span class="ans-content">C</span>
+                </span> ）
+            </p>
+            <p style="margin-left:15px; font-size:14px; color:#4a5568;">
+                A. 金属钠可长期露置在空气中不变<br>
+                B. 金属钠在空气中点燃产生灿烂的紫色火焰<br>
+                C. 金属钾与水反应比钠更剧烈，伴随特征的淡紫色火花<br>
+                D. 钠可以从氯化钾水溶液中置换出钾
+            </p>
+
+            <div class="block-ans-box" style="margin-top:15px;">
+                <span>2. <strong>离子方程式挑战：</strong>写出金属钠与高浓度 <span class="math">H^+</span> 稀盐酸剧烈近乎爆炸的离子反应式：</span>
+                <button class="ans-trigger" onclick="toggleBlockAns(this)">展开离子方程式</button>
+                <div class="block-ans-content">2Na + 2H<sup>+</sup> &rarr; 2Na<sup>+</sup> + H<sub>2</sub>&uarr;</div>
+            </div>
+        </div>
+
+        <!-- 章节知识总结 NotebookLM 风格：由左向右水平延伸心智图 -->
+        <div class="mindmap-container">
+            <div class="mindmap-header">
+                <div class="mindmap-title">
+                    🧠 单元知识结构心智图 (Horizontal Mind Map)
+                </div>
+                <div style="display:flex; gap:8px;">
+                    <button class="btn btn-outline" style="color:#61afef; border-color:#3e4451; padding:2px 8px; font-size:12px;" onclick="expandAllMindmap(true)">全部展开</button>
+                    <button class="btn btn-outline" style="color:#61afef; border-color:#3e4451; padding:2px 8px; font-size:12px;" onclick="expandAllMindmap(false)">全部折叠</button>
+                    <button class="btn btn-outline" style="color:#61afef; border-color:#3e4451; padding:2px 8px; font-size:12px;" onclick="toggleMindmap()">展开/收起心智图</button>
+                </div>
+            </div>
+            
+            <div class="mindmap-content" id="mindmap-content">
+                <div class="h-tree">
+                    <!-- 最左侧：总根节点 -->
+                    <div class="h-node root has-children" onclick="toggleHNode(this)">
+                        IA 族元素：钠和钾 <span class="toggle-btn">+</span>
+                    </div>
+                    <!-- 一级分支（大项目）：垂直排布，水平向右展开 -->
+                    <ul>
+                        <li>
+                            <div class="h-node branch has-children" onclick="toggleHNode(this)">
+                                碱金属概述 <span class="toggle-btn">+</span>
+                            </div>
+                            <ul>
+                                <li><div class="h-node leaf">元素成员：Li, Na, K, Rb, Cs, Fr</div></li>
+                                <li><div class="h-node leaf">原子结构特征：最外层 1 个电子</div></li>
+                                <li><div class="h-node leaf">递变性：原子序数递增，金属性增强</div></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="h-node branch has-children" onclick="toggleHNode(this)">
+                                钠和钾的性质 <span class="toggle-btn">+</span>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="h-node branch has-children" onclick="toggleHNode(this)">
+                                        物理性质 <span class="toggle-btn">+</span>
+                                    </div>
+                                    <ul>
+                                        <li><div class="h-node leaf">银白色金属</div></li>
+                                        <li><div class="h-node leaf">质软，可用小刀切割</div></li>
+                                        <li><div class="h-node leaf">良好的导电、导热性</div></li>
+                                        <li><div class="h-node leaf">密度：比水小，比煤油大 (Na > K)</div></li>
+                                        <li><div class="h-node leaf">熔点较低</div></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="h-node branch has-children" onclick="toggleHNode(this)">
+                                        化学性质 <span class="toggle-btn">+</span>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="h-node branch has-children" onclick="toggleHNode(this)">
+                                                与非金属单质反应 <span class="toggle-btn">+</span>
+                                            </div>
+                                            <ul>
+                                                <li><div class="h-node leaf">与 O₂ 反应：生成 Na₂O, Na₂O₂ 或 K₂O, K₂O₂, KO₂</div></li>
+                                                <li><div class="h-node leaf">与卤素反应：生成相应的卤化物 (MX)</div></li>
+                                            </ul>
+                                        </li>
+                                        <li><div class="h-node leaf">与水/酸反应：生成碱/盐和 H₂ (反应剧烈)</div></li>
+                                        <li><div class="h-node leaf">强还原性：容易失去最外层电子</div></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="h-node branch">检验方法：焰色试验</div>
+                        </li>
+                        <li>
+                            <div class="h-node branch">重要化合物的性质与用途</div>
+                        </li>
+                        <li>
+                            <div class="h-node branch has-children" onclick="toggleHNode(this)">
+                                工业制备与保存 <span class="toggle-btn">+</span>
+                            </div>
+                            <ul>
+                                <li><div class="h-node leaf">制备钠：电解熔融氯化钠</div></li>
+                                <li><div class="h-node leaf">制备钾：钠热还原法 (Na + KCl)</div></li>
+                                <li><div class="h-node leaf">保存：通常保存在煤油中</div></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript 脚本 -->
+    <script>
+        // --- 答案与通用展开控制 ---
+        function toggleAns(btnElement) {
+            const content = btnElement.nextElementSibling;
+            if (content.classList.contains('show')) {
+                content.classList.remove('show');
+                btnElement.classList.remove('hidden');
+            } else {
+                content.classList.add('show');
+                btnElement.classList.add('hidden');
+            }
+        }
+
+        function toggleBlockAns(btnElement) {
+            const content = btnElement.nextElementSibling;
+            if (content.classList.contains('show')) {
+                content.classList.remove('show');
+                btnElement.textContent = "展开答案";
+            } else {
+                content.classList.add('show');
+                btnElement.textContent = "收起答案";
+            }
+        }
+
+        function toggleAllAnswers(showAll) {
+            document.querySelectorAll('.ans-content').forEach(c => c.classList.toggle('show', showAll));
+            document.querySelectorAll('.ans-inline .ans-trigger').forEach(t => t.classList.toggle('hidden', showAll));
+            document.querySelectorAll('.block-ans-content').forEach(c => c.classList.toggle('show', showAll));
+            document.querySelectorAll('.block-ans-box .ans-trigger').forEach(t => {
+                t.textContent = showAll ? "收起答案" : "展开答案";
+            });
+        }
+
+        function toggleElectronPopover() {
+            const pop = document.getElementById('electron-popover');
+            pop.classList.toggle('show');
+        }
+
+        // --- 水平向右扩展心智图逻辑 ---
+        function toggleMindmap() {
+            const mapContent = document.getElementById('mindmap-content');
+            mapContent.classList.toggle('show');
+        }
+
+        function toggleHNode(nodeElement) {
+            const nextUl = nodeElement.nextElementSibling;
+            const toggleBtn = nodeElement.querySelector('.toggle-btn');
+            if (nextUl && nextUl.tagName === 'UL') {
+                if (nextUl.classList.contains('layer-open')) {
+                    nextUl.classList.remove('layer-open');
+                    if(toggleBtn) toggleBtn.textContent = '+';
+                } else {
+                    nextUl.classList.add('layer-open');
+                    if(toggleBtn) toggleBtn.textContent = '-';
+                }
+            }
+        }
+
+        function expandAllMindmap(expand) {
+            const allUls = document.querySelectorAll('.h-tree ul');
+            const allBtns = document.querySelectorAll('.h-tree .toggle-btn');
+            allUls.forEach(ul => {
+                if (expand) ul.classList.add('layer-open');
+                else ul.classList.remove('layer-open');
+            });
+            allBtns.forEach(btn => {
+                btn.textContent = expand ? '-' : '+';
+            });
+        }
+
+        // --- PhET 互动模拟器 JavaScript ---
+        const canvas = document.getElementById('simCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let currentTab = 3;
+        let selectedMetal = 'Na';
+        let animId = null;
+
+        function selectMetal(metal) {
+            selectedMetal = metal;
+            document.getElementById('btn-na').classList.toggle('active', metal === 'Na');
+            document.getElementById('btn-k').classList.toggle('active', metal === 'K');
+            resetSim();
+        }
+
+        function switchTab(tabIndex) {
+            currentTab = tabIndex;
+            document.querySelectorAll('.sim-tab-btn').forEach((btn, idx) => {
+                btn.classList.toggle('active', idx + 1 === tabIndex);
+            });
+            document.querySelectorAll('.tab-controls').forEach((ctrl, idx) => {
+                ctrl.style.display = (idx + 1 === tabIndex) ? 'block' : 'none';
+            });
+            resetSim();
+        }
+
+        function resetSim() {
+            if (animId) cancelAnimationFrame(animId);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            const eqBox = document.getElementById('equation-text');
+            const statusBox = document.getElementById('status-text');
+            const obsBox = document.getElementById('observation-text');
+
+            if (currentTab === 1) {
+                statusBox.innerText = `金属 ${selectedMetal} 保存在煤油中`;
+                eqBox.innerText = selectedMetal === 'Na' ? '4Na + O₂ → 2Na₂O' : '4K + O₂ → 2K₂O';
+                obsBox.innerHTML = `<strong>保存原理：</strong>${selectedMetal} 沉于煤油底部，隔绝空气与水。`;
+                drawTab1Initial();
+            } else if (currentTab === 2) {
+                statusBox.innerText = `准备加热坩埚中的金属 ${selectedMetal}`;
+                eqBox.innerText = selectedMetal === 'Na' ? '2Na + O₂ --(点燃)--> Na₂O₂' : 'K + O₂ --(点燃)--> KO₂';
+                obsBox.innerHTML = `点击加热，观察熔化及火焰颜色。`;
+                drawTab2Initial();
+            } else if (currentTab === 3) {
+                statusBox.innerText = `烧杯装有含酚酞的水溶液`;
+                eqBox.innerText = `2${selectedMetal} + 2H₂O → 2${selectedMetal}OH + H₂↑`;
+                obsBox.innerHTML = `观察“浮、熔、游、响、红”现象。`;
+                drawTab3Initial();
+            } else if (currentTab === 4) {
+                statusBox.innerText = `${selectedMetal} 原子微观结构`;
+                eqBox.innerText = selectedMetal === 'Na' ? 'Na (2,8,1) → Na⁺ + e⁻' : 'K (2,8,8,1) → K⁺ + e⁻';
+                obsBox.innerHTML = `对比 Na 与 K 最外层电子脱离的难易度。`;
+                drawTab4Micro();
+            }
+        }
+
+        // Tab 1 绘制与动画
+        function drawTab1Initial() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = '#333'; ctx.lineWidth = 3;
+            ctx.strokeRect(200, 80, 150, 180);
+            ctx.fillStyle = 'rgba(241, 196, 15, 0.25)';
+            ctx.fillRect(202, 120, 146, 138);
+            ctx.fillStyle = selectedMetal === 'Na' ? '#95a5a6' : '#7f8c8d';
+            ctx.fillRect(245, 220, 60, 35);
+        }
+
+        function runCutExperiment() {
+            let progress = 0;
+            const isK = selectedMetal === 'K';
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#d35400'; ctx.fillRect(100, 240, 350, 15);
+                ctx.fillStyle = '#7f8c8d';
+                ctx.fillRect(200, 180, 60, 60); ctx.fillRect(280, 180, 60, 60);
+                let luster = Math.max(0, 1 - progress * (isK ? 0.02 : 0.008));
+                let c = Math.floor(220 * luster + 100 * (1 - luster));
+                ctx.fillStyle = `rgb(${c},${c},${c})`;
+                ctx.fillRect(260, 180, 20, 60);
+                progress++;
+                if (progress < 150) animId = requestAnimationFrame(animate);
+                else document.getElementById('observation-text').innerHTML = `切面展示银白色光泽，极快变暗（K 比 Na 快）。`;
+            }
+            animate();
+        }
+
+        // Tab 2 绘制与动画
+        function drawTab2Initial() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = '#333'; ctx.lineWidth = 3;
+            ctx.beginPath(); ctx.arc(275, 160, 30, 0, Math.PI); ctx.stroke();
+            ctx.fillStyle = '#95a5a6'; ctx.fillRect(265, 148, 20, 12);
+        }
+
+        function runBurnExperiment() {
+            let frame = 0;
+            const isNa = selectedMetal === 'Na';
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                drawTab2Initial();
+                if (frame > 20 && frame < 120) {
+                    ctx.fillStyle = isNa ? 'rgba(241, 196, 15, 0.8)' : 'rgba(155, 89, 182, 0.8)';
+                    ctx.beginPath(); ctx.arc(275, 145, 20 + Math.random()*5, 0, Math.PI*2); ctx.fill();
+                }
+                frame++;
+                if (frame <= 120) animId = requestAnimationFrame(animate);
+                else document.getElementById('observation-text').innerHTML = `剧烈燃烧！火焰: ${isNa ? '黄色' : '紫色'}，生成多元氧化物。`;
+            }
+            animate();
+        }
+
+        // Tab 3 绘制与动画
+        function drawTab3Initial() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = '#7f8c8d'; ctx.lineWidth = 3;
+            ctx.strokeRect(175, 100, 200, 160);
+            ctx.fillStyle = 'rgba(189, 195, 199, 0.3)';
+            ctx.fillRect(177, 140, 196, 118);
+        }
+
+        function runWaterExperiment() {
+            let x = 275, frame = 0;
+            const isK = selectedMetal === 'K';
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                drawTab3Initial();
+                let pink = Math.min(0.7, frame / 100);
+                ctx.fillStyle = `rgba(231, 76, 60, ${pink})`;
+                ctx.fillRect(177, 140, 196, 118);
+
+                x += (Math.random() - 0.5) * (isK ? 10 : 5);
+                x = Math.max(190, Math.min(360, x));
+
+                ctx.fillStyle = '#ecf0f1';
+                ctx.beginPath(); ctx.arc(x, 138, 7, 0, Math.PI * 2); ctx.fill();
+
+                if (isK || frame % 2 === 0) {
+                    ctx.fillStyle = isK ? '#9b59b6' : '#f1c40f';
+                    ctx.fillRect(x + (Math.random()-0.5)*10, 130, 3, 3);
+                }
+                frame++;
+                if (frame < 120) animId = requestAnimationFrame(animate);
+                else document.getElementById('observation-text').innerHTML = `五字诀: 浮、熔、游、响、红。反应剧烈度: K > Na。`;
+            }
+            animate();
+        }
+
+        // Tab 4 微观模型
+        function drawTab4Micro(dist = 0) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const isNa = selectedMetal === 'Na';
+            const layers = isNa ? [2, 8, 1] : [2, 8, 8, 1];
+            const cx = 275, cy = 150;
+
+            ctx.fillStyle = '#e74c3c'; ctx.beginPath(); ctx.arc(cx, cy, 16, 0, Math.PI*2); ctx.fill();
+            ctx.fillStyle = '#fff'; ctx.font = '10px sans-serif'; ctx.fillText(isNa ? '+11' : '+19', cx - 10, cy + 4);
+
+            layers.forEach((cnt, idx) => {
+                let r = 30 + idx * 25;
+                ctx.strokeStyle = '#cbd5e0'; ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI*2); ctx.stroke();
+                if (idx === layers.length - 1 && dist > 0) {
+                    ctx.fillStyle = '#3498db';
+                    ctx.beginPath(); ctx.arc(cx + r + dist, cy, 5, 0, Math.PI*2); ctx.fill();
+                } else {
+                    for (let i = 0; i < cnt; i++) {
+                        let a = (i / cnt) * Math.PI * 2;
+                        ctx.fillStyle = '#3498db';
+                        ctx.beginPath(); ctx.arc(cx + r * Math.cos(a), cy + r * Math.sin(a), 4, 0, Math.PI*2); ctx.fill();
+                    }
+                }
+            });
+        }
+
+        function triggerElectronLoss() {
+            let d = 0;
+            function animate() {
+                drawTab4Micro(d); d += 3;
+                if (d <= 100) animId = requestAnimationFrame(animate);
+                else document.getElementById('observation-text').innerHTML = `最外层 1 个电子极易失去。K 的半径更大，金属性 K > Na。`;
+            }
+            animate();
+        }
+
+        // --- 电解模拟器 JS ---
+        let electrolysisRunning = true;
+
+        function toggleElectrolysisAnim() {
+            electrolysisRunning = !electrolysisRunning;
+            if (electrolysisRunning) drawElectrolysis();
+        }
+
+        function drawElectrolysis() {
+            const eCanvas = document.getElementById('electrolysisCanvas');
+            if(!eCanvas) return;
+            const eCtx = eCanvas.getContext('2d');
+            let frame = 0;
+
+            function anim() {
+                eCtx.clearRect(0, 0, eCanvas.width, eCanvas.height);
+                // 电极
+                eCtx.fillStyle = '#cbd5e0';
+                eCtx.fillRect(100, 30, 20, 110); // 阴极
+                eCtx.fillRect(380, 30, 20, 110); // 阳极
+
+                eCtx.fillStyle = '#fff'; eCtx.font = '12px sans-serif';
+                eCtx.fillText('阴极 (-)', 90, 20); eCtx.fillText('阳极 (+)', 370, 20);
+
+                // 熔融 NaCl 介质
+                eCtx.fillStyle = 'rgba(237, 137, 54, 0.3)';
+                eCtx.fillRect(120, 50, 260, 90);
+
+                // 动态离子
+                let shift = (frame % 40) * 2;
+                eCtx.fillStyle = '#4299e1';
+                eCtx.beginPath(); eCtx.arc(300 - shift, 80, 7, 0, Math.PI*2); eCtx.fill();
+                eCtx.fillStyle = '#48bb78';
+                eCtx.beginPath(); eCtx.arc(200 + shift, 110, 7, 0, Math.PI*2); eCtx.fill();
+
+                frame++;
+                if (electrolysisRunning) requestAnimationFrame(anim);
+            }
+            anim();
+        }
+
+        // 页面初始化
+        resetSim();
+        drawElectrolysis();
+    </script>
+</body>
+</html>
